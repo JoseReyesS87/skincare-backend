@@ -1,0 +1,91 @@
+# docker-compose.yml - Para desarrollo local
+version: '3.8'
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - SHOPIFY_SHOP_DOMAIN=${SHOPIFY_SHOP_DOMAIN}
+      - SHOPIFY_ACCESS_TOKEN=${SHOPIFY_ACCESS_TOKEN}
+    volumes:
+      - ./shopify_products.json:/app/shopify_products.json
+    restart: unless-stopped
+
+---
+# Dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Instalar cron
+RUN apt-get update && apt-get install -y cron && rm -rf /var/lib/apt/lists/*
+
+# Copiar archivos
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Configurar cron para sincronización
+RUN echo "0 2 * * * /usr/local/bin/python /app/shopify_sync.py >> /var/log/cron.log 2>&1" > /etc/cron.d/shopify-sync
+RUN echo "0 */4 * * * /usr/local/bin/python /app/shopify_sync.py --inventory-only >> /var/log/cron.log 2>&1" >> /etc/cron.d/shopify-sync
+RUN chmod 0644 /etc/cron.d/shopify-sync
+RUN crontab /etc/cron.d/shopify-sync
+
+# Script de inicio
+COPY start.sh .
+RUN chmod +x start.sh
+
+CMD ["./start.sh"]
+
+---
+# start.sh
+#!/bin/bash
+
+# Iniciar cron en background
+cron
+
+# Sincronización inicial
+python shopify_sync.py
+
+# Iniciar la aplicación
+gunicorn automated_backend:app --bind 0.0.0.0:5000 --workers 2
+
+---
+# requirements.txt actualizado
+Flask==2.3.2
+flask-cors==4.0.0
+gunicorn==21.2.0
+pandas==2.0.3
+numpy==1.24.3
+requests==2.31.0
+python-dotenv==1.0.0
+
+---
+# .env.example
+SHOPIFY_SHOP_DOMAIN=tu-tienda.myshopify.com
+SHOPIFY_ACCESS_TOKEN=tu-token-de-acceso
+
+---
+# Para Railway: railway.toml
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "./start.sh"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+---
+# Para Render: render.yaml simplificado
+services:
+  - type: web
+    name: skincare-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SHOPIFY_SHOP_DOMAIN
+        sync: false
+      - key: SHOPIFY_ACCESS_TOKEN
+        sync: false

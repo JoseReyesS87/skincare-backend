@@ -1,0 +1,8 @@
+.env
+.env.txt
+*.pyc
+__pycache__/
+shopify_products.json
+venv/
+.DS_Store
+*.log
