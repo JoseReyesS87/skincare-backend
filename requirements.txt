@@ -6,4 +6,9 @@ numpy==1.24.3
 requests==2.31.0
 python-dotenv==1.0.0
 setuptools==68.0.0
+<<<<<<< HEAD
 wheel==0.41.0
+=======
+wheel==0.41.0
+
+>>>>>>> f67ffec70c950cae812b5bf5a05776f792f1bed8
