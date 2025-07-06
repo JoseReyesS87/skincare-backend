@@ -6,6 +6,8 @@ import json
 import time
 from typing import Dict, List, Optional
 import logging
+from dotenv import load_dotenv
+load_dotenv()
 
 # Configurar logging
 logging.basicConfig(
@@ -65,34 +67,42 @@ class ShopifySync:
         logger.info(f"Total de productos obtenidos: {len(products)}")
         return products
     
-    def get_inventory_levels(self) -> Dict[str, int]:
-        """Obtiene los niveles de inventario actuales"""
+    def get_inventory_levels(self, products: List[Dict]) -> Dict[str, int]:
+        """Obtiene niveles de inventario por inventory_item_ids en grupos de 50"""
         inventory_levels = {}
-        url = f"{self.base_url}/inventory_levels.json"
-        params = {'limit': 250}
-        
-        while url:
+
+        # Extraer todos los inventory_item_ids únicos
+        inventory_item_ids = list({
+          str(variant.get('inventory_item_id'))
+          for product in products
+          for variant in product.get('variants', [])
+          if variant.get('inventory_item_id') is not None
+     })
+
+        # Shopify permite hasta 50 IDs por llamada
+        chunk_size = 50
+        chunks = [inventory_item_ids[i:i+chunk_size] for i in range(0, len(inventory_item_ids), chunk_size)]
+
+        for chunk in chunks:
+            ids_param = ','.join(chunk)
+            url = f"{self.base_url}/inventory_levels.json"
+            params = {'inventory_item_ids': ids_param}
+
             try:
                 response = requests.get(url, headers=self.headers, params=params)
                 response.raise_for_status()
-                
                 data = response.json()
+
                 for item in data.get('inventory_levels', []):
-                    inventory_item_id = item.get('inventory_item_id')
+                    inventory_item_id = str(item.get('inventory_item_id'))
                     available = item.get('available', 0)
-                    inventory_levels[str(inventory_item_id)] = available
-                
-                # Paginación
-                link_header = response.headers.get('Link', '')
-                url = self._get_next_page_url(link_header)
-                params = {}
-                
+                    inventory_levels[inventory_item_id] = available
+
                 time.sleep(0.5)
-                
+
             except requests.exceptions.RequestException as e:
-                logger.error(f"Error obteniendo inventario: {e}")
-                break
-                
+                logger.error(f"Error obteniendo inventario para IDs {chunk}: {e}")
+
         logger.info(f"Niveles de inventario obtenidos: {len(inventory_levels)}")
         return inventory_levels
     
@@ -193,7 +203,7 @@ class ShopifySync:
             products = self.get_all_products()
             
             # Obtener inventario
-            inventory = self.get_inventory_levels()
+            inventory = self.get_inventory_levels(products)
             
             # Procesar datos
             df = self.process_products_data(products, inventory)
