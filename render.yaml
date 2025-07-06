@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: skincare-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn automated_backend:app"
+    envVars:
+      - key: SHOPIFY_SHOP_DOMAIN
+        sync: false
+      - key: SHOPIFY_ACCESS_TOKEN
+        sync: false
