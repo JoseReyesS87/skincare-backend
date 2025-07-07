@@ -24,11 +24,18 @@ def load_products_from_file():
     """Carga productos desde el archivo JSON generado por shopify_sync.py"""
     global products_df, last_update
     
+    print(f"=== CARGANDO PRODUCTOS ===")
+    print(f"Buscando archivo: {PRODUCTS_FILE}")
+    print(f"Directorio actual: {os.getcwd()}")
+    print(f"Archivos disponibles: {os.listdir('.')}")
+    
     try:
         if os.path.exists(PRODUCTS_FILE):
+            print(f"Archivo {PRODUCTS_FILE} encontrado!")
             with open(PRODUCTS_FILE, 'r') as f:
                 products_data = json.load(f)
             
+            print(f"Datos JSON cargados: {len(products_data)} productos")
             products_df = pd.DataFrame(products_data)
             
             # Asegurar que las columnas necesarias existen
@@ -68,11 +75,16 @@ def load_products_from_file():
             products_df['prob_popularidad'] = products_df['stock'] / max(max_stock, 1)
             
             last_update = datetime.now()
-            print(f"Productos cargados: {len(products_df)} items")
+            print(f"✅ Productos cargados exitosamente: {len(products_df)} items")
             return True
+        else:
+            print(f"❌ Archivo {PRODUCTS_FILE} NO encontrado")
+            return False
             
     except Exception as e:
-        print(f"Error cargando productos: {e}")
+        print(f"❌ Error cargando productos: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 def categorize_skin_type(row):
@@ -359,7 +371,7 @@ def get_stats():
     try:
         return jsonify({
             "total_products": len(products_df),
-            "available_products": len(products_df[products_df['available'] == True]),
+            "available_products": len(products_df[products_df['available'] == True]) if not products_df.empty else 0,
             "last_update": last_update.isoformat() if last_update else None,
             "product_types": products_df['product_type'].value_counts().to_dict() if not products_df.empty else {}
         })
@@ -381,14 +393,23 @@ def auto_update_products():
         # Esperar hasta la próxima actualización
         time.sleep(UPDATE_INTERVAL)
 
-# Inicializar al arrancar
-if __name__ == "__main__":
-    # Cargar productos al inicio
-    load_products_from_file()
-    
-    # Iniciar thread de actualización automática
+# ========================================
+# IMPORTANTE: CARGAR PRODUCTOS AL INICIO
+# ========================================
+print("=== INICIANDO APLICACIÓN ===")
+print(f"Python: {os.sys.version}")
+print(f"Directorio de trabajo: {os.getcwd()}")
+
+# Cargar productos inmediatamente al importar el módulo
+load_products_from_file()
+
+# Inicializar thread de actualización solo una vez
+if not update_thread or not update_thread.is_alive():
     update_thread = threading.Thread(target=auto_update_products, daemon=True)
     update_thread.start()
-    
-    # Iniciar servidor
+    print("✅ Thread de actualización automática iniciado")
+
+# Este bloque solo se ejecuta cuando se ejecuta directamente (no con gunicorn)
+if __name__ == "__main__":
+    print("=== MODO DESARROLLO ===")
     app.run(host="0.0.0.0", port=5000, debug=False)
