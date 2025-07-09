@@ -88,25 +88,28 @@ def load_products_from_file():
         return False
 
 def categorize_skin_type(row):
-    """Categoriza tipo de piel basado en tags y tipo de producto"""
+    """Categoriza tipo de piel basado en tags y tipo de producto - MEJORADO"""
     tags_lower = str(row.get('tags_str', '')).lower()
     product_type_lower = str(row.get('product_type', '')).lower()
+    title_lower = str(row.get('title', '')).lower()
     
     skin_types = []
     
-    # Buscar indicadores en tags y tipo de producto
-    combined_text = f"{tags_lower} {product_type_lower}"
+    # Buscar indicadores en tags, tipo de producto y título
+    combined_text = f"{tags_lower} {product_type_lower} {title_lower}"
     
-    if any(word in combined_text for word in ['grasa', 'oily', 'acne', 'matificante']):
-        skin_types.append('grasa')
-    if any(word in combined_text for word in ['seca', 'dry', 'hidratante', 'nutritiva']):
-        skin_types.append('seca')
-    if any(word in combined_text for word in ['mixta', 'combination', 'balance']):
-        skin_types.append('mixta')
-    if any(word in combined_text for word in ['sensible', 'sensitive', 'suave', 'gentle']):
-        skin_types.append('sensible')
-    if any(word in combined_text for word in ['normal', 'todo tipo', 'all skin']):
-        skin_types.append('normal')
+    # Palabras clave más específicas y en español/inglés
+    skin_keywords = {
+        'grasa': ['grasa', 'graso', 'oily', 'acne', 'acné', 'matificante', 'oil-control', 'sebum', 'sebo'],
+        'seca': ['seca', 'seco', 'dry', 'hidratante', 'nutritiva', 'nutritivo', 'moisturizing', 'nourishing'],
+        'mixta': ['mixta', 'mixto', 'combination', 'combo', 'balance', 'equilibrante'],
+        'sensible': ['sensible', 'sensitive', 'suave', 'gentle', 'delicada', 'delicado', 'calming', 'soothing'],
+        'normal': ['normal', 'todo tipo', 'all skin', 'universal', 'cualquier tipo']
+    }
+    
+    for skin_type, keywords in skin_keywords.items():
+        if any(keyword in combined_text for keyword in keywords):
+            skin_types.append(skin_type)
     
     # Si no se encontró ningún tipo específico, asumir que es para todo tipo de piel
     if not skin_types:
@@ -115,28 +118,68 @@ def categorize_skin_type(row):
     return ', '.join(skin_types)
 
 def categorize_product_step(row):
-    """Categoriza el paso de la rutina basado en el tipo de producto"""
-    product_type = str(row.get('product_type', '')).lower()
-    title = str(row.get('title', '')).lower()
+    """Categoriza el paso de la rutina basado en product_type de Shopify"""
+    product_type = str(row.get('product_type', '')).strip()
     tags = str(row.get('tags_str', '')).lower()
+    title = str(row.get('title', '')).lower()
     
-    # Combinar toda la información
-    combined = f"{product_type} {title} {tags}"
+    print(f"=== CLASIFICANDO PRODUCTO ===")
+    print(f"Título: {title}")
+    print(f"Product Type: '{product_type}'")
+    print(f"Tags: {tags}")
     
-    # Mapeo de palabras clave a pasos de rutina
-    step_mapping = {
-        'limpiador en espuma': ['foam', 'espuma', 'cleanser foam', 'limpiador espuma'],
-        'limpiador oleoso': ['oil cleanser', 'aceite limpiador', 'cleansing oil'],
-        'tónico': ['toner', 'tonico', 'tónico'],
-        'serum': ['serum', 'sérum', 'essence', 'ampoule'],
-        'hidratante': ['moisturizer', 'cream', 'crema', 'hidratante', 'lotion'],
-        'protector solar': ['sunscreen', 'spf', 'protector solar', 'bloqueador']
+    # PRODUCTOS A IGNORAR - No incluir en rutinas básicas
+    ignored_types = ['Contorno de Ojos']
+    
+    if product_type in ignored_types:
+        print(f"🚫 IGNORADO: '{product_type}' → otros (producto especializado)")
+        return 'otros'
+    
+    # Mapeo DIRECTO basado en tus product_type existentes
+    product_type_mapping = {
+        # Mapeo exacto de tus tipos de producto
+        'Hidratante': 'hidratante',
+        'Serum': 'serum',
+        'Serum Exfoliante': 'serum',  # Los sérums exfoliantes siguen siendo sérums
+        'Tónico': 'tónico',
+        'Tónico Exfoliante': 'tónico',  # Los tónicos exfoliantes siguen siendo tónicos
+        'Protector Solar': 'protector solar',
+        'Limpiador Oleoso': 'limpiador oleoso',
+        'Limpiador en Espuma': 'limpiador en espuma',
+        'Esencia': 'tónico',  # Las esencias funcionan como tónicos en la rutina
+        'Exfoliante': 'serum'  # Exfoliantes se pueden usar como tratamiento/sérum
+        # Nota: 'Contorno de Ojos' se ignora arriba
     }
     
-    for step, keywords in step_mapping.items():
-        if any(keyword in combined for keyword in keywords):
-            return step
+    # Buscar coincidencia exacta con product_type
+    if product_type in product_type_mapping:
+        step = product_type_mapping[product_type]
+        print(f"✅ Encontrado por PRODUCT_TYPE: '{product_type}' → {step}")
+        return step
     
+    # Si no hay coincidencia exacta, buscar en etiquetas como fallback
+    tag_mapping = {
+        'limpiador oleoso': ['aceite limpiador', 'oil cleanser', 'cleansing oil', 'primera limpieza'],
+        'limpiador en espuma': ['limpiador espuma', 'foam cleanser', 'gel limpiador', 'segunda limpieza'],
+        'tónico': ['tonico', 'tónico', 'toner', 'essence', 'esencia'],
+        'serum': ['serum', 'sérum', 'suero', 'ampoule', 'ampolla'],
+        'hidratante': ['hidratante', 'moisturizer', 'crema hidratante'],
+        'protector solar': ['protector solar', 'sunscreen', 'bloqueador', 'spf']
+    }
+    
+    # Verificar si contiene palabras de contorno de ojos en tags/título para ignorar
+    eye_keywords = ['contorno', 'eye cream', 'under eye', 'ojos', 'ojeras']
+    if any(keyword in tags or keyword in title for keyword in eye_keywords):
+        print(f"🚫 IGNORADO por keywords de ojos → otros")
+        return 'otros'
+    
+    for step, keywords in tag_mapping.items():
+        for keyword in keywords:
+            if keyword in tags:
+                print(f"⚠️ Encontrado por TAGS (fallback): '{keyword}' → {step}")
+                return step
+    
+    print(f"❌ No clasificado - Product Type: '{product_type}' → otros")
     return 'otros'
 
 def validate_user_responses(respuestas_usuario):
@@ -186,13 +229,19 @@ def apply_base_filters(df, tipo_piel, preocupaciones, vegano):
         return None, f"Error al aplicar filtros base: {str(e)}"
 
 def filter_products_by_step(base_filtered, paso, preocupaciones):
-    """Filtra productos por paso específico con lógica de fallback"""
+    """Filtra productos por paso específico con lógica de fallback mejorada"""
     try:
         # Primero categorizar productos por paso
         base_filtered['step_category'] = base_filtered.apply(categorize_product_step, axis=1)
         
+        # Debug: mostrar categorización
+        print(f"=== FILTRANDO PASO: {paso} ===")
+        step_counts = base_filtered['step_category'].value_counts()
+        print(f"Productos por categoría: {step_counts.to_dict()}")
+        
         # Filtrar por paso
         filtered_df = base_filtered[base_filtered['step_category'] == paso].copy()
+        print(f"Productos encontrados para '{paso}': {len(filtered_df)}")
         
         # Si hay productos, aplicar filtros de preocupaciones
         if len(filtered_df) > 0 and preocupaciones:
@@ -204,8 +253,9 @@ def filter_products_by_step(base_filtered, paso, preocupaciones):
                     temp_filtered = temp_filtered[mask]
             
             # Si quedan productos después del filtro, usar esos
-            if len(temp_filtered) >= 2:
+            if len(temp_filtered) >= 1:
                 filtered_df = temp_filtered
+                print(f"Después de filtrar por preocupaciones: {len(filtered_df)}")
         
         # Ordenar por popularidad
         filtered_df = filtered_df.sort_values(by="prob_popularidad", ascending=False)
@@ -250,6 +300,11 @@ def get_recommendations(respuestas_usuario):
         preocupaciones = [p.lower().strip() for p in respuestas_usuario.get("preocupaciones", []) if p.strip()]
         vegano = respuestas_usuario.get("vegano", False)
         
+        print(f"=== PROCESANDO RECOMENDACIONES ===")
+        print(f"Tipo de piel: {tipo_piel}")
+        print(f"Preocupaciones: {preocupaciones}")
+        print(f"Vegano: {vegano}")
+        
         # Aplicar filtros base
         base_filtrada, filter_error = apply_base_filters(products_df, tipo_piel, preocupaciones, vegano)
         if filter_error:
@@ -259,7 +314,9 @@ def get_recommendations(respuestas_usuario):
         if base_filtrada.empty:
             return None, "No se encontraron productos que coincidan con los criterios especificados"
         
-        # Definir rutinas
+        print(f"Productos después de filtros base: {len(base_filtrada)}")
+        
+        # Definir rutinas EN EL ORDEN CORRECTO
         rutinas = {
             "Rutina Básica": ["limpiador en espuma", "hidratante", "protector solar"],
             "Rutina Intermedia": ["limpiador en espuma", "tónico", "serum", "hidratante", "protector solar"],
@@ -270,17 +327,24 @@ def get_recommendations(respuestas_usuario):
         
         # Procesar cada rutina
         for nombre_rutina, pasos_en_rutina in rutinas.items():
+            print(f"\n=== PROCESANDO {nombre_rutina.upper()} ===")
             opciones_rutina_1 = []
             opciones_rutina_2 = []
             todos_los_pasos_tienen_opciones = True
             
             for paso in pasos_en_rutina:
+                print(f"\nProcesando paso: {paso}")
                 # Filtrar productos por paso
                 match, step_error = filter_products_by_step(base_filtrada, paso, preocupaciones)
                 
                 if step_error or match.empty:
+                    print(f"No se encontraron productos para {paso}")
                     todos_los_pasos_tienen_opciones = False
                     break
+                
+                print(f"Productos encontrados para {paso}: {len(match)}")
+                if len(match) > 0:
+                    print(f"Primeros productos: {match[['name', 'step_category']].head().to_dict('records')}")
                 
                 if len(match) >= 2:
                     # Crear opciones de productos
@@ -304,6 +368,7 @@ def get_recommendations(respuestas_usuario):
                     "Opción 1": opciones_rutina_1,
                     "Opción 2": opciones_rutina_2
                 }
+                print(f"✅ {nombre_rutina} completada con {len(opciones_rutina_1)} pasos")
             else:
                 recomendaciones_finales[nombre_rutina] = {
                     "No disponible": [{
@@ -311,10 +376,14 @@ def get_recommendations(respuestas_usuario):
                         "nombre": "No hay suficientes productos disponibles para esta rutina en este momento."
                     }]
                 }
+                print(f"❌ {nombre_rutina} no disponible")
         
         return recomendaciones_finales, None
         
     except Exception as e:
+        print(f"❌ Error en get_recommendations: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return None, f"Error inesperado en get_recommendations: {str(e)}"
 
 # Endpoint principal
@@ -338,6 +407,9 @@ def recomendar_endpoint():
         if not respuestas_usuario:
             return jsonify({"error": "No se recibieron datos JSON válidos"}), 400
         
+        print(f"=== ENDPOINT RECIBIDO ===")
+        print(f"Datos recibidos: {respuestas_usuario}")
+        
         # Verificar que los productos están cargados
         if products_df.empty:
             load_products_from_file()
@@ -354,6 +426,8 @@ def recomendar_endpoint():
         
     except Exception as e:
         print(f"Error en endpoint: {e}")
+        import traceback
+        traceback.print_exc()
         return jsonify({"error": f"Error interno del servidor: {str(e)}"}), 500
 
 @app.route("/health", methods=["GET"])
@@ -375,6 +449,132 @@ def get_stats():
             "last_update": last_update.isoformat() if last_update else None,
             "product_types": products_df['product_type'].value_counts().to_dict() if not products_df.empty else {}
         })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/products/debug", methods=["GET"])
+def debug_products():
+    """Endpoint para debug de productos y clasificación"""
+    try:
+        if products_df.empty:
+            return jsonify({"error": "No hay productos cargados"}), 404
+        
+        # Aplicar categorización
+        debug_df = products_df.copy()
+        debug_df['step_category'] = debug_df.apply(categorize_product_step, axis=1)
+        
+        # Estadísticas por categoría de rutina
+        step_stats = debug_df['step_category'].value_counts().to_dict()
+        
+        # Estadísticas por product_type original
+        product_type_stats = debug_df['product_type'].value_counts().to_dict()
+        
+        # Mapeo de product_type a step_category
+        type_to_step_mapping = {}
+        for product_type in debug_df['product_type'].unique():
+            if pd.notna(product_type) and product_type != '':
+                step_counts = debug_df[debug_df['product_type'] == product_type]['step_category'].value_counts()
+                type_to_step_mapping[product_type] = step_counts.to_dict()
+        
+        # Ejemplos de productos por categoría de rutina
+        examples = {}
+        for step in step_stats.keys():
+            step_products = debug_df[debug_df['step_category'] == step].head(3)
+            examples[step] = step_products[['name', 'product_type', 'step_category']].to_dict('records')
+        
+        # Productos sin clasificar
+        unclassified = debug_df[debug_df['step_category'] == 'otros']
+        unclassified_examples = unclassified[['name', 'product_type', 'tags_str']].head(10).to_dict('records')
+        
+        return jsonify({
+            "total_products": len(debug_df),
+            "step_statistics": step_stats,
+            "product_type_statistics": product_type_stats,
+            "type_to_step_mapping": type_to_step_mapping,
+            "examples_by_step": examples,
+            "unclassified_products": {
+                "count": len(unclassified),
+                "examples": unclassified_examples
+            },
+            "current_product_types": {
+                "recognized": [
+                    "Hidratante", "Serum", "Tónico", "Protector Solar", 
+                    "Limpiador Oleoso", "Limpiador en Espuma",
+                    "Esencia", "Tónico Exfoliante", "Exfoliante", "Serum Exfoliante"
+                ],
+                "ignored": [
+                    "Contorno de Ojos"
+                ],
+                "mapping_info": {
+                    "Hidratante → hidratante": "Para el paso de hidratación",
+                    "Serum → serum": "Para tratamientos específicos",
+                    "Tónico → tónico": "Para preparar la piel",
+                    "Protector Solar → protector solar": "Para protección UV",
+                    "Limpiador Oleoso → limpiador oleoso": "Primera limpieza",
+                    "Limpiador en Espuma → limpiador en espuma": "Segunda limpieza",
+                    "Esencia → tónico": "Se usa como tónico en la rutina",
+                    "Contorno de Ojos → IGNORADO": "Producto muy específico, no incluido en rutinas básicas"
+                }
+            }
+        })
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/products/tags-suggestions", methods=["GET"])
+def suggest_tags():
+    """Endpoint para sugerir etiquetas basado en nombres de productos"""
+    try:
+        if products_df.empty:
+            return jsonify({"error": "No hay productos cargados"}), 404
+        
+        suggestions = []
+        
+        for _, product in products_df.iterrows():
+            title = str(product.get('title', '')).lower()
+            current_tags = str(product.get('tags_str', '')).lower()
+            
+            suggested_tags = []
+            
+            # Analizar título y sugerir etiquetas
+            if any(word in title for word in ['oil', 'aceite', 'cleansing oil']):
+                if 'aceite limpiador' not in current_tags:
+                    suggested_tags.append('aceite limpiador')
+            
+            if any(word in title for word in ['foam', 'espuma', 'gel']):
+                if 'limpiador espuma' not in current_tags:
+                    suggested_tags.append('limpiador espuma')
+            
+            if any(word in title for word in ['toner', 'tonico', 'tónico', 'essence']):
+                if 'tonico' not in current_tags:
+                    suggested_tags.append('tonico')
+            
+            if any(word in title for word in ['serum', 'sérum', 'suero', 'ampoule']):
+                if 'serum' not in current_tags:
+                    suggested_tags.append('serum')
+            
+            if any(word in title for word in ['moisturizer', 'crema', 'hidratante']):
+                if 'hidratante' not in current_tags:
+                    suggested_tags.append('hidratante')
+            
+            if any(word in title for word in ['sunscreen', 'spf', 'protector', 'solar']):
+                if 'protector solar' not in current_tags:
+                    suggested_tags.append('protector solar')
+            
+            if suggested_tags:
+                suggestions.append({
+                    'product_id': product.get('product_id'),
+                    'title': product.get('title'),
+                    'current_tags': product.get('tags_str'),
+                    'suggested_tags': suggested_tags
+                })
+        
+        return jsonify({
+            "total_suggestions": len(suggestions),
+            "suggestions": suggestions[:20],  # Limitar a 20 para no sobrecargar
+            "note": "Estas son sugerencias basadas en el análisis del título del producto"
+        })
+        
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
