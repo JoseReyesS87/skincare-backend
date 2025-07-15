@@ -1,275 +1,399 @@
-import os
-import pandas as pd
-import requests
-from datetime import datetime
+import shopify
 import json
-import time
-from typing import Dict, List, Optional
-import logging
+import os
 from dotenv import load_dotenv
+from datetime import datetime, timedelta
+
+# Cargar variables de entorno
 load_dotenv()
 
-# Configurar logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+SHOP_NAME = os.getenv('SHOPIFY_SHOP_NAME')
+ACCESS_TOKEN = os.getenv('SHOPIFY_ACCESS_TOKEN')
 
-class ShopifySync:
-    def __init__(self):
-        # Obtener credenciales desde variables de entorno
-        self.shop_domain = os.environ.get('SHOPIFY_SHOP_DOMAIN')
-        self.access_token = os.environ.get('SHOPIFY_ACCESS_TOKEN')
-        self.api_version = '2024-01'  # Actualiza según tu versión
+def get_all_collections():
+    """Obtiene todas las colecciones (Custom y Smart Collections)"""
+    try:
+        all_collections = {}
         
-        if not self.shop_domain or not self.access_token:
-            raise ValueError("Faltan las credenciales de Shopify en las variables de entorno")
-        
-        self.base_url = f"https://{self.shop_domain}/admin/api/{self.api_version}"
-        self.headers = {
-            'X-Shopify-Access-Token': self.access_token,
-            'Content-Type': 'application/json'
-        }
-        
-        # Configurar la base de datos o archivo donde guardarás los datos
-        self.data_file = 'shopify_products.json'  # Puedes cambiar esto a una DB
-        
-    def get_all_products(self) -> List[Dict]:
-        """Obtiene todos los productos de Shopify con paginación"""
-        products = []
-        url = f"{self.base_url}/products.json"
-        params = {
-            'limit': 250,  # Máximo permitido por Shopify
-            'fields': 'id,title,handle,vendor,product_type,created_at,updated_at,variants,images'
-        }
-        
-        while url:
-            try:
-                response = requests.get(url, headers=self.headers, params=params)
-                response.raise_for_status()
-                
-                data = response.json()
-                products.extend(data.get('products', []))
-                
-                # Verificar si hay más páginas
-                link_header = response.headers.get('Link', '')
-                url = self._get_next_page_url(link_header)
-                params = {}  # Los params solo se usan en la primera petición
-                
-                # Respetar rate limits
-                time.sleep(0.5)
-                
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Error obteniendo productos: {e}")
-                break
-                
-        logger.info(f"Total de productos obtenidos: {len(products)}")
-        return products
-    
-    def get_inventory_levels(self, products: List[Dict]) -> Dict[str, int]:
-        """Obtiene niveles de inventario por inventory_item_ids en grupos de 50"""
-        inventory_levels = {}
-
-        # Extraer todos los inventory_item_ids únicos
-        inventory_item_ids = list({
-          str(variant.get('inventory_item_id'))
-          for product in products
-          for variant in product.get('variants', [])
-          if variant.get('inventory_item_id') is not None
-     })
-
-        # Shopify permite hasta 50 IDs por llamada
-        chunk_size = 50
-        chunks = [inventory_item_ids[i:i+chunk_size] for i in range(0, len(inventory_item_ids), chunk_size)]
-
-        for chunk in chunks:
-            ids_param = ','.join(chunk)
-            url = f"{self.base_url}/inventory_levels.json"
-            params = {'inventory_item_ids': ids_param}
-
-            try:
-                response = requests.get(url, headers=self.headers, params=params)
-                response.raise_for_status()
-                data = response.json()
-
-                for item in data.get('inventory_levels', []):
-                    inventory_item_id = str(item.get('inventory_item_id'))
-                    available = item.get('available', 0)
-                    inventory_levels[inventory_item_id] = available
-
-                time.sleep(0.5)
-
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Error obteniendo inventario para IDs {chunk}: {e}")
-
-        logger.info(f"Niveles de inventario obtenidos: {len(inventory_levels)}")
-        return inventory_levels
-    
-    def _get_next_page_url(self, link_header: str) -> Optional[str]:
-        """Extrae la URL de la siguiente página del header Link"""
-        if not link_header:
-            return None
-            
-        links = link_header.split(',')
-        for link in links:
-            if 'rel="next"' in link:
-                url = link.split(';')[0].strip('<> ')
-                return url
-        return None
-    
-    def process_products_data(self, products: List[Dict], inventory: Dict[str, int]) -> pd.DataFrame:
-        """Procesa los productos y crea el DataFrame"""
-        processed_data = []
-        
-        for product in products:
-            base_info = {
-                'product_id': product.get('id'),
-                'title': product.get('title'),
-                'handle': product.get('handle'),
-                'vendor': product.get('vendor'),
-                'product_type': product.get('product_type'),
-                'created_at': product.get('created_at'),
-                'updated_at': product.get('updated_at'),
-                'image_url': product.get('images', [{}])[0].get('src') if product.get('images') else None
+        print("📂 Obteniendo Custom Collections...")
+        # Obtener Custom Collections
+        custom_collections = shopify.CustomCollection.find(limit=250)
+        for collection in custom_collections:
+            all_collections[str(collection.id)] = {
+                'id': str(collection.id),
+                'handle': collection.handle,
+                'title': collection.title,
+                'type': 'custom'
             }
+        
+        print("📂 Obteniendo Smart Collections...")
+        # Obtener Smart Collections
+        smart_collections = shopify.SmartCollection.find(limit=250)
+        for collection in smart_collections:
+            all_collections[str(collection.id)] = {
+                'id': str(collection.id),
+                'handle': collection.handle,
+                'title': collection.title,
+                'type': 'smart'
+            }
+        
+        print(f"✅ Encontradas {len(all_collections)} colecciones")
+        for col_id, col_data in all_collections.items():
+            print(f"   - {col_data['title']} ({col_data['handle']}) [{col_data['type']}]")
+        
+        return all_collections
+        
+    except Exception as e:
+        print(f"❌ Error obteniendo colecciones: {e}")
+        return {}
+
+def get_product_collections_batch(products, all_collections):
+    """Obtiene colecciones de productos en batch para mejor performance"""
+    product_collections_map = {}
+    
+    print("🔗 Mapeando productos a colecciones...")
+    
+    # Para cada colección, obtener sus productos
+    for collection_id, collection_data in all_collections.items():
+        try:
+            print(f"   Procesando colección: {collection_data['title']}")
             
-            # Procesar variantes
-            for variant in product.get('variants', []):
-                variant_data = base_info.copy()
-                variant_data.update({
-                    'variant_id': variant.get('id'),
-                    'sku': variant.get('sku'),
-                    'price': variant.get('price'),
-                    'compare_at_price': variant.get('compare_at_price'),
-                    'inventory_item_id': variant.get('inventory_item_id'),
-                    'stock': inventory.get(str(variant.get('inventory_item_id')), 0),
-                    'barcode': variant.get('barcode'),
-                    'weight': variant.get('weight'),
-                    'weight_unit': variant.get('weight_unit'),
-                    'option1': variant.get('option1'),
-                    'option2': variant.get('option2'),
-                    'option3': variant.get('option3')
-                })
-                processed_data.append(variant_data)
-        
-        df = pd.DataFrame(processed_data)
-        logger.info(f"DataFrame creado con {len(df)} filas")
-        return df
-    
-    def save_data(self, df: pd.DataFrame):
-        """Guarda los datos procesados"""
-        # Opción 1: Guardar como JSON (simple para empezar)
-        df.to_json(self.data_file, orient='records', indent=2)
-        logger.info(f"Datos guardados en {self.data_file}")
-        
-        # Opción 2: Guardar en una base de datos PostgreSQL (si tienes una en Render)
-        # from sqlalchemy import create_engine
-        # engine = create_engine(os.environ.get('DATABASE_URL'))
-        # df.to_sql('products', engine, if_exists='replace', index=False)
-    
-    def check_for_changes(self, new_df: pd.DataFrame) -> Dict[str, List]:
-        """Compara con datos anteriores para detectar cambios"""
-        changes = {'new_products': [], 'stock_changes': [], 'price_changes': []}
-        
-        if os.path.exists(self.data_file):
+            # Obtener productos de esta colección
             try:
-                old_df = pd.read_json(self.data_file)
+                if collection_data['type'] == 'custom':
+                    collection_products = shopify.Product.find(collection_id=collection_id, limit=250)
+                else:  # smart collection
+                    collection_products = shopify.Product.find(collection_id=collection_id, limit=250)
+            except Exception as inner_e:
+                print(f"     ⚠️ Error obteniendo productos de colección: {inner_e}")
+                continue
+            
+            # Mapear productos a colecciones
+            for product in collection_products:
+                product_id = str(product.id)
                 
-                # Detectar nuevos productos
-                new_products = new_df[~new_df['variant_id'].isin(old_df['variant_id'])]
-                changes['new_products'] = new_products.to_dict('records')
+                if product_id not in product_collections_map:
+                    product_collections_map[product_id] = []
                 
-                # Detectar cambios de stock
-                merged = new_df.merge(old_df, on='variant_id', suffixes=('_new', '_old'))
-                stock_changes = merged[merged['stock_new'] != merged['stock_old']]
-                changes['stock_changes'] = stock_changes[['variant_id', 'title_new', 'sku_new', 'stock_old', 'stock_new']].to_dict('records')
-                
-                # Detectar cambios de precio
-                price_changes = merged[merged['price_new'] != merged['price_old']]
-                changes['price_changes'] = price_changes[['variant_id', 'title_new', 'sku_new', 'price_old', 'price_new']].to_dict('records')
-                
-            except Exception as e:
-                logger.error(f"Error comparando cambios: {e}")
-        
-        return changes
-    
-    def sync_products(self):
-        """Función principal de sincronización para productos"""
-        logger.info("Iniciando sincronización de productos...")
-        
-        try:
-            # Obtener productos
-            products = self.get_all_products()
+                product_collections_map[product_id].append({
+                    'collection_id': collection_id,
+                    'collection_handle': collection_data['handle'],
+                    'collection_title': collection_data['title']
+                })
             
-            # Obtener inventario
-            inventory = self.get_inventory_levels(products)
-            
-            # Procesar datos
-            df = self.process_products_data(products, inventory)
-            
-            # Detectar cambios
-            changes = self.check_for_changes(df)
-            
-            # Registrar cambios
-            if changes['new_products']:
-                logger.info(f"Nuevos productos detectados: {len(changes['new_products'])}")
-            if changes['stock_changes']:
-                logger.info(f"Cambios de stock detectados: {len(changes['stock_changes'])}")
-            if changes['price_changes']:
-                logger.info(f"Cambios de precio detectados: {len(changes['price_changes'])}")
-            
-            # Guardar datos
-            self.save_data(df)
-            
-            logger.info("Sincronización completada exitosamente")
-            
-            # Opcional: Enviar notificaciones sobre cambios importantes
-            # self.send_notifications(changes)
+            print(f"     - {len(collection_products)} productos en esta colección")
             
         except Exception as e:
-            logger.error(f"Error en sincronización: {e}")
-            raise
+            print(f"❌ Error procesando colección {collection_data['title']}: {e}")
+            continue
     
-    def sync_inventory_only(self):
-        """Función rápida solo para actualizar inventario"""
-        logger.info("Iniciando actualización rápida de inventario...")
+    return product_collections_map
+
+def get_product_sales_data():
+    """Obtiene datos de ventas históricas por producto de los últimos 90 días"""
+    
+    print("📊 Obteniendo datos de ventas históricas...")
+    
+    sales_by_product = {}
+    
+    try:
+        # Fecha de hace 90 días
+        since_date = (datetime.now() - timedelta(days=90)).strftime('%Y-%m-%d')
         
-        try:
-            # Cargar datos existentes
-            if not os.path.exists(self.data_file):
-                logger.warning("No hay datos previos, ejecutando sincronización completa")
-                return self.sync_products()
+        # Obtener todas las órdenes desde esa fecha
+        print(f"   Buscando órdenes desde: {since_date}")
+        
+        orders = shopify.Order.find(
+            status='any',
+            created_at_min=since_date,
+            limit=250
+        )
+        
+        total_orders_processed = 0
+        
+        # Procesar primera página
+        print(f"   Procesando primera página con {len(orders)} órdenes...")
+        
+        for order in orders:
+            # Solo contar órdenes completadas/pagadas
+            if order.financial_status in ['paid', 'partially_paid']:
+                total_orders_processed += 1
+                
+                for line_item in order.line_items:
+                    product_id = str(line_item.product_id) if line_item.product_id else 'unknown'
+                    variant_id = str(line_item.variant_id) if line_item.variant_id else 'unknown'
+                    quantity = line_item.quantity or 0
+                    
+                    # Crear clave única para producto-variante
+                    key = f"{product_id}-{variant_id}"
+                    
+                    if key not in sales_by_product:
+                        sales_by_product[key] = {
+                            'product_id': product_id,
+                            'variant_id': variant_id,
+                            'total_sold': 0,
+                            'order_count': 0,
+                            'product_title': line_item.title or 'Unknown'
+                        }
+                    
+                    sales_by_product[key]['total_sold'] += quantity
+                    sales_by_product[key]['order_count'] += 1
+        
+        # Procesar páginas adicionales si existen
+        page_num = 2
+        while orders.has_next_page():
+            print(f"   Procesando página {page_num}...")
+            orders = orders.next_page()
             
-            df = pd.read_json(self.data_file)
+            for order in orders:
+                if order.financial_status in ['paid', 'partially_paid']:
+                    total_orders_processed += 1
+                    
+                    for line_item in order.line_items:
+                        product_id = str(line_item.product_id) if line_item.product_id else 'unknown'
+                        variant_id = str(line_item.variant_id) if line_item.variant_id else 'unknown'
+                        quantity = line_item.quantity or 0
+                        
+                        key = f"{product_id}-{variant_id}"
+                        
+                        if key not in sales_by_product:
+                            sales_by_product[key] = {
+                                'product_id': product_id,
+                                'variant_id': variant_id,
+                                'total_sold': 0,
+                                'order_count': 0,
+                                'product_title': line_item.title or 'Unknown'
+                            }
+                        
+                        sales_by_product[key]['total_sold'] += quantity
+                        sales_by_product[key]['order_count'] += 1
             
-            # Obtener solo inventario
-            inventory = self.get_inventory_levels()
-            
-            # Actualizar stock en el DataFrame
-            df['stock'] = df['inventory_item_id'].astype(str).map(inventory).fillna(0).astype(int)
-            
-            # Guardar datos actualizados
-            self.save_data(df)
-            
-            logger.info("Actualización de inventario completada")
-            
-        except Exception as e:
-            logger.error(f"Error actualizando inventario: {e}")
-            raise
+            page_num += 1
+        
+        print(f"✅ Procesadas {total_orders_processed} órdenes pagadas")
+        print(f"✅ Datos de ventas obtenidos para {len(sales_by_product)} variantes")
+        
+        # Mostrar top 10 productos más vendidos
+        sorted_sales = sorted(sales_by_product.items(), 
+                            key=lambda x: x[1]['total_sold'], 
+                            reverse=True)[:10]
+        
+        print("\n🏆 TOP 10 PRODUCTOS MÁS VENDIDOS (últimos 90 días):")
+        for i, (key, data) in enumerate(sorted_sales, 1):
+            print(f"   {i}. {data['product_title']}: {data['total_sold']} unidades vendidas")
+        
+        return sales_by_product
+        
+    except Exception as e:
+        print(f"❌ Error obteniendo datos de ventas: {e}")
+        import traceback
+        traceback.print_exc()
+        return {}
 
+def calculate_popularity_metrics(variant, product, sales_data):
+    """Calcula métricas basadas en ventas históricas REALES"""
+    
+    stock = variant.inventory_quantity or 0
+    variant_id = str(variant.id)
+    product_id = str(product.id)
+    
+    # Obtener datos de ventas para esta variante
+    key = f"{product_id}-{variant_id}"
+    variant_sales = sales_data.get(key, {})
+    
+    total_sold = variant_sales.get('total_sold', 0)
+    order_count = variant_sales.get('order_count', 0)
+    
+    # Determinar disponibilidad (basado solo en stock)
+    is_available = stock > 0
+    
+    # Score basado ÚNICAMENTE en cantidad vendida
+    if total_sold > 100:
+        sales_score = 1.0
+    elif total_sold > 50:
+        sales_score = 0.9
+    elif total_sold > 20:
+        sales_score = 0.7
+    elif total_sold > 10:
+        sales_score = 0.5
+    elif total_sold > 5:
+        sales_score = 0.3
+    elif total_sold > 0:
+        sales_score = 0.1
+    else:
+        sales_score = 0.0
+    
+    # Score final: score de ventas si está disponible, 0 si no hay stock
+    final_ranking_score = sales_score if is_available else 0.0
+    
+    return {
+        'popularity_score': round(sales_score, 3),
+        'sales_score': round(sales_score, 3),
+        'total_sold': total_sold,
+        'order_count': order_count,
+        'final_ranking_score': round(final_ranking_score, 3)
+    }
 
-# Funciones para ejecutar según el tipo de sincronización
-def run_full_sync():
-    """Ejecuta sincronización completa (productos + inventario)"""
-    sync = ShopifySync()
-    sync.sync_products()
-
-def run_inventory_sync():
-    """Ejecuta solo actualización de inventario"""
-    sync = ShopifySync()
-    sync.sync_inventory_only()
+def sync_products_with_collections():
+    """Función principal de sincronización con colecciones y datos de ventas"""
+    
+    # Configurar conexión a Shopify
+    shopify.ShopifyResource.set_site(f"https://{SHOP_NAME}.myshopify.com/admin/api/2023-10/")
+    shopify.ShopifyResource.set_headers({"X-Shopify-Access-Token": ACCESS_TOKEN})
+    
+    print(f"🚀 Iniciando sincronización de productos con colecciones y ventas...")
+    print(f"   Tienda: {SHOP_NAME}")
+    print(f"   Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    
+    try:
+        # PASO 1: Obtener todas las colecciones
+        print(f"\n📂 PASO 1: Obteniendo colecciones...")
+        all_collections = get_all_collections()
+        
+        # PASO 2: Obtener todos los productos
+        print(f"\n📦 PASO 2: Obteniendo productos...")
+        products = shopify.Product.find(limit=250)
+        
+        # Manejar paginación si hay más de 250 productos
+        all_products = list(products)
+        while products.has_next_page():
+            products = products.next_page()
+            all_products.extend(products)
+        
+        print(f"✅ Encontrados {len(all_products)} productos en total")
+        
+        # PASO 3: Obtener datos de ventas
+        print(f"\n📊 PASO 3: Obteniendo datos de ventas...")
+        sales_data = get_product_sales_data()
+        
+        # PASO 4: Mapear productos a colecciones
+        print(f"\n🔗 PASO 4: Mapeando productos a colecciones...")
+        product_collections_map = get_product_collections_batch(all_products, all_collections)
+        
+        # PASO 5: Procesar productos y variantes
+        print(f"\n⚙️ PASO 5: Procesando productos y variantes...")
+        products_data = []
+        
+        for i, product in enumerate(all_products):
+            if i % 50 == 0:  # Mostrar progreso cada 50 productos
+                print(f"   Procesando producto {i+1}/{len(all_products)}")
+            
+            # Obtener colecciones de este producto
+            product_collections = product_collections_map.get(str(product.id), [])
+            
+            for variant in product.variants:
+                # Calcular métricas de popularidad con datos de ventas
+                popularity_metrics = calculate_popularity_metrics(variant, product, sales_data)
+                
+                product_info = {
+                    # Datos básicos del producto
+                    'product_id': str(product.id),
+                    'variant_id': str(variant.id),
+                    'title': product.title,
+                    'sku': variant.sku or '',
+                    'price': float(variant.price) if variant.price else 0,
+                    'stock': variant.inventory_quantity or 0,
+                    'product_type': product.product_type or '',
+                    'vendor': product.vendor or '',
+                    'tags': product.tags.split(', ') if product.tags else [],
+                    'tags_str': product.tags or '',  # Para compatibilidad con app.py
+                    'handle': product.handle,
+                    'image_url': str(product.images[0].src) if product.images else '',
+                    'available': (variant.inventory_quantity or 0) > 0,
+                    
+                    # DATOS DE COLECCIONES (requeridos por el nuevo pipeline)
+                    'collections': product_collections,
+                    'collection_handles': [col['collection_handle'] for col in product_collections],
+                    'collection_titles': [col['collection_title'] for col in product_collections],
+                    
+                    # MÉTRICAS DE POPULARIDAD (con datos de ventas reales)
+                    **popularity_metrics
+                }
+                
+                products_data.append(product_info)
+        
+        # PASO 6: Crear backup del archivo anterior (si existe)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        if os.path.exists('shopify_products.json'):
+            backup_filename = f'shopify_products_backup_{timestamp}.json'
+            os.rename('shopify_products.json', backup_filename)
+            print(f"\n💾 Backup creado: {backup_filename}")
+        
+        # PASO 7: Guardar datos nuevos
+        print(f"\n💾 PASO 6: Guardando datos...")
+        with open('shopify_products.json', 'w', encoding='utf-8') as f:
+            json.dump(products_data, f, ensure_ascii=False, indent=2)
+        
+        # PASO 8: Mostrar estadísticas finales
+        print(f"\n✅ SINCRONIZACIÓN COMPLETADA")
+        print(f"   📦 Total productos/variantes: {len(products_data)}")
+        print(f"   📂 Total colecciones: {len(all_collections)}")
+        print(f"   💾 Archivo guardado: shopify_products.json")
+        
+        # Estadísticas de ventas
+        products_with_sales = sum(1 for p in products_data if p.get('total_sold', 0) > 0)
+        total_units_sold = sum(p.get('total_sold', 0) for p in products_data)
+        
+        print(f"\n📊 ESTADÍSTICAS DE VENTAS (últimos 90 días):")
+        print(f"   🛒 Productos con ventas: {products_with_sales}")
+        print(f"   📦 Total unidades vendidas: {total_units_sold}")
+        
+        # Estadísticas de colecciones
+        products_with_collections = sum(1 for p in products_data if p['collections'])
+        products_without_collections = len(products_data) - products_with_collections
+        print(f"\n🔗 ESTADÍSTICAS DE COLECCIONES:")
+        print(f"   ✅ Productos con colecciones: {products_with_collections}")
+        print(f"   ⚠️ Productos sin colecciones: {products_without_collections}")
+        
+        # Top colecciones por número de productos
+        collection_counts = {}
+        for product in products_data:
+            for collection in product['collection_handles']:
+                collection_counts[collection] = collection_counts.get(collection, 0) + 1
+        
+        print(f"\n📊 TOP 10 COLECCIONES POR NÚMERO DE PRODUCTOS:")
+        top_collections = sorted(collection_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+        for collection, count in top_collections:
+            print(f"   - {collection}: {count} productos")
+        
+        # Estadísticas de stock y disponibilidad
+        available_products = sum(1 for p in products_data if p['available'])
+        total_stock = sum(p['stock'] for p in products_data)
+        avg_price = sum(p['price'] for p in products_data) / len(products_data) if products_data else 0
+        
+        print(f"\n📈 ESTADÍSTICAS GENERALES:")
+        print(f"   ✅ Productos disponibles: {available_products}")
+        print(f"   📦 Stock total: {total_stock}")
+        print(f"   💰 Precio promedio: ${avg_price:,.0f}")
+        
+        # Top 10 productos más vendidos en el archivo
+        sorted_by_sales = sorted(products_data, key=lambda x: x.get('total_sold', 0), reverse=True)[:10]
+        print(f"\n🏆 TOP 10 PRODUCTOS MÁS VENDIDOS (en el archivo):")
+        for i, product in enumerate(sorted_by_sales, 1):
+            print(f"   {i}. {product['title']}: {product.get('total_sold', 0)} unidades")
+        
+        print(f"\n🎯 SISTEMA LISTO")
+        print(f"   El archivo ahora incluye:")
+        print(f"   ✅ Datos de ventas reales de los últimos 90 días")
+        print(f"   ✅ Colecciones para filtrado por tipo de piel")
+        print(f"   ✅ Rankings basados en ventas históricas")
+        print(f"   ✅ Disponibilidad basada solo en stock")
+        
+        return products_data
+        
+    except Exception as e:
+        print(f"❌ Error en sincronización: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
 
 if __name__ == "__main__":
-    # Por defecto ejecuta sincronización completa
-    run_full_sync()
+    print("=== SHOPIFY SYNC CON VENTAS HISTÓRICAS ===")
+    result = sync_products_with_collections()
+    
+    if result:
+        print(f"\n🎉 SINCRONIZACIÓN EXITOSA")
+        print(f"Puedes ejecutar app.py para usar el recomendador con datos de ventas reales")
+    else:
+        print(f"\n❌ SINCRONIZACIÓN FALLÓ")
+        print(f"Revisa los errores arriba y verifica tu configuración")
