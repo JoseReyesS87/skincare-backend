@@ -7,6 +7,7 @@ import os
 import json
 import threading
 import time
+from collections import OrderedDict
 
 app = Flask(__name__)
 CORS(app, origins=['*'])
@@ -380,11 +381,11 @@ def get_recommendations(respuestas_usuario):
         if base_filtrada.empty:
             return None, "No se encontraron productos que coincidan con los criterios especificados"
         
-        rutinas = {
+        rutinas = OrderedDict([
             "Rutina Básica": ["limpiador en espuma", "hidratante", "protector solar"],
             "Rutina Intermedia": ["limpiador en espuma", "tónico", "serum", "hidratante", "protector solar"],
             "Rutina Completa": ["limpiador oleoso", "limpiador en espuma", "tónico", "serum", "hidratante", "protector solar"],
-        }
+        ])
         
         recomendaciones_finales = {}
         
