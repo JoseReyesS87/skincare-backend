@@ -7,7 +7,6 @@ import os
 import json
 import threading
 import time
-from collections import OrderedDict
 
 app = Flask(__name__)
 CORS(app, origins=['*'])
@@ -362,7 +361,7 @@ def create_product_option(producto, paso):
         }
 
 def get_recommendations(respuestas_usuario):
-    """Función principal para generar recomendaciones"""
+    """Función principal para generar recomendaciones CON ORDEN GARANTIZADO"""
     try:
         is_valid, validation_message = validate_user_responses(respuestas_usuario)
         if not is_valid:
@@ -371,6 +370,11 @@ def get_recommendations(respuestas_usuario):
         tipo_piel = respuestas_usuario.get("tipo_piel", "").lower().strip()
         preocupaciones = [p.lower().strip() for p in respuestas_usuario.get("preocupaciones", []) if p.strip()]
         vegano = respuestas_usuario.get("vegano", False)
+        
+        print(f"=== PROCESANDO RECOMENDACIONES ===")
+        print(f"Tipo de piel: {tipo_piel}")
+        print(f"Preocupaciones: {preocupaciones}")
+        print(f"Vegano: {vegano}")
         
         base_filtrada = products_df[products_df['available'] == True].copy()
         
@@ -381,25 +385,34 @@ def get_recommendations(respuestas_usuario):
         if base_filtrada.empty:
             return None, "No se encontraron productos que coincidan con los criterios especificados"
         
-        rutinas = OrderedDict([
-            "Rutina Básica": ["limpiador en espuma", "hidratante", "protector solar"],
-            "Rutina Intermedia": ["limpiador en espuma", "tónico", "serum", "hidratante", "protector solar"],
-            "Rutina Completa": ["limpiador oleoso", "limpiador en espuma", "tónico", "serum", "hidratante", "protector solar"],
-        ])
+        print(f"Productos después de filtros base: {len(base_filtrada)}")
         
-        recomendaciones_finales = {}
+        # RUTINAS EN ORDEN ESPECÍFICO USANDO LISTA
+        rutinas_ordenadas = [
+            ("Rutina Básica", ["limpiador en espuma", "hidratante", "protector solar"]),
+            ("Rutina Intermedia", ["limpiador en espuma", "tónico", "serum", "hidratante", "protector solar"]),
+            ("Rutina Completa", ["limpiador oleoso", "limpiador en espuma", "tónico", "serum", "hidratante", "protector solar"])
+        ]
         
-        for nombre_rutina, pasos_en_rutina in rutinas.items():
+        # CONSTRUIR RESULTADO MANTENIENDO EL ORDEN
+        resultado_ordenado = {}
+        
+        for nombre_rutina, pasos_en_rutina in rutinas_ordenadas:
+            print(f"\n=== PROCESANDO {nombre_rutina.upper()} ===")
             opciones_rutina_1 = []
             opciones_rutina_2 = []
             todos_los_pasos_tienen_opciones = True
             
             for paso in pasos_en_rutina:
+                print(f"Procesando paso: {paso}")
                 match, step_error = filter_products_by_step(base_filtrada, paso, preocupaciones, tipo_piel)
                 
                 if step_error or match.empty:
+                    print(f"No se encontraron productos para {paso}")
                     todos_los_pasos_tienen_opciones = False
                     break
+                
+                print(f"Productos encontrados para {paso}: {len(match)}")
                 
                 if len(match) >= 2:
                     producto_opcion_1 = match.iloc[0].to_dict()
@@ -415,22 +428,28 @@ def get_recommendations(respuestas_usuario):
                     todos_los_pasos_tienen_opciones = False
                     break
             
+            # AGREGAR AL RESULTADO EN EL ORDEN CORRECTO
             if todos_los_pasos_tienen_opciones and opciones_rutina_1:
-                recomendaciones_finales[nombre_rutina] = {
+                resultado_ordenado[nombre_rutina] = {
                     "Opción 1": opciones_rutina_1,
                     "Opción 2": opciones_rutina_2
                 }
+                print(f"✅ {nombre_rutina} completada con {len(opciones_rutina_1)} pasos")
             else:
-                recomendaciones_finales[nombre_rutina] = {
+                resultado_ordenado[nombre_rutina] = {
                     "No disponible": [{
                         "paso": "Información",
                         "nombre": "No hay suficientes productos disponibles para esta rutina en este momento."
                     }]
                 }
+                print(f"❌ {nombre_rutina} no disponible")
         
-        return recomendaciones_finales, None
+        return resultado_ordenado, None
         
     except Exception as e:
+        print(f"❌ Error en get_recommendations: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return None, f"Error inesperado en get_recommendations: {str(e)}"
 
 # ENDPOINTS
@@ -525,7 +544,7 @@ print(f"Directorio de trabajo: {os.getcwd()}")
 
 load_products_from_file()
 
-# Comentar temporalmente la actualización automática
+# Thread de actualización comentado temporalmente
 # if not update_thread or not update_thread.is_alive():
 #     update_thread = threading.Thread(target=auto_update_products, daemon=True)
 #     update_thread.start()
