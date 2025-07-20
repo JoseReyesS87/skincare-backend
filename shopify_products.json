@@ -5,7 +5,7 @@
     "title": "Anua - Azelaic Acid 10% Serum - Serum Anti-rojeces 30 ml",
     "sku": "",
     "price": 33990.0,
-    "stock": 2,
+    "stock": 0,
     "product_type": "Serum",
     "vendor": "Anua",
     "tags": [
@@ -20,7 +20,7 @@
     "tags_str": "Grasa, Manchas / Pigmentación, Mixta, Rojeces, Rojez, Seca, Sensible",
     "handle": "anua-azelaic-acid-10-serum-serum-anti-rojeces-30-ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Anua_-_Azelaic_Acid_10_Serum_-_Serum_Anti-rojeces_30_ml.jpg?v=1752514734",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "444242526432",
@@ -90,10 +90,10 @@
       "Serum",
       "Skincare"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 2,
+    "order_count": 2,
     "final_ranking_score": 0.0
   },
   {
@@ -306,7 +306,7 @@
     "title": "Anua - Heartleaf Pore Control Cleansing Oil",
     "sku": "",
     "price": 32990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Limpiador Oleoso",
     "vendor": "Anua",
     "tags": [
@@ -465,8 +465,8 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 8,
-    "order_count": 8,
+    "total_sold": 6,
+    "order_count": 6,
     "final_ranking_score": 0.0
   },
   {
@@ -1104,10 +1104,10 @@
       "Glitter",
       "Maquillaje"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
     "final_ranking_score": 0.0
   },
   {
@@ -2013,7 +2013,7 @@
     "title": "Banila Co Clean it Zero Cleansing Balm Pore Clarifying - 50 ml",
     "sku": "",
     "price": 13990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Limpiador Oleoso",
     "vendor": "Banila Co",
     "tags": [
@@ -2025,7 +2025,7 @@
     "tags_str": "Grasa, Mixta, Poros Dilatados, Sebo",
     "handle": "banila-co-clean-it-zero-cleansing-balm-pore-clarifying-50-ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Clean-it-zero-claryfing.webp?v=1720561525",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "429388103904",
@@ -2081,11 +2081,11 @@
       "Sebo",
       "Skincare"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 5,
-    "order_count": 5,
-    "final_ranking_score": 0.1
+    "popularity_score": 0.3,
+    "sales_score": 0.3,
+    "total_sold": 6,
+    "order_count": 6,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8249465700576",
@@ -2173,7 +2173,7 @@
     "title": "Banila Co Clean it Zero Foam Cleanser",
     "sku": "678",
     "price": 13990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Limpiador en Espuma",
     "vendor": "Banila Co",
     "tags": [
@@ -2563,11 +2563,11 @@
       "Serum",
       "Skincare"
     ],
-    "popularity_score": 0.3,
-    "sales_score": 0.3,
-    "total_sold": 6,
-    "order_count": 6,
-    "final_ranking_score": 0.3
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 5,
+    "order_count": 5,
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249467142368",
@@ -2575,7 +2575,7 @@
     "title": "Beauty of Joseon - Centella Asiatica Calming Mask",
     "sku": "66",
     "price": 2990.0,
-    "stock": 3,
+    "stock": 1,
     "product_type": "Mascarilla",
     "vendor": "Beauty of Joseon",
     "tags": [
@@ -2645,7 +2645,7 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 7,
+    "total_sold": 8,
     "order_count": 6,
     "final_ranking_score": 0.3
   },
@@ -2655,7 +2655,7 @@
     "title": "Beauty of Joseon - Dynasty Cream",
     "sku": "44",
     "price": 26990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Hidratante",
     "vendor": "Beauty of Joseon",
     "tags": [
@@ -2670,7 +2670,7 @@
     "tags_str": "Arrugas / Antiedad, Grasa, Manchas / Pigmentación, Mixta, Seca, Sensible, Vegano",
     "handle": "beauty-of-joseon-dynasty-cream",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/Beauty-of-Joseon-Dynasty-Cream.jpg?v=1707709301",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -2742,9 +2742,9 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 6,
-    "order_count": 6,
-    "final_ranking_score": 0.3
+    "total_sold": 7,
+    "order_count": 7,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8377822806240",
@@ -2849,7 +2849,7 @@
     "title": "Beauty of Joseon - Ginseng Essence Water",
     "sku": "8809738310960",
     "price": 24990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Tonico",
     "vendor": "Beauty of Joseon",
     "tags": [
@@ -2861,7 +2861,7 @@
     "tags_str": "Arrugas / Antiedad, Seca, Sensible, Vegano",
     "handle": "beauty-of-joseon-ginseng-essence-water",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/Beauty-of-Joseon-Ginseng-Essence-Water-1.jpg?v=1707709543",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -2912,9 +2912,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
-    "final_ranking_score": 0.1
+    "total_sold": 3,
+    "order_count": 3,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8249476776160",
@@ -3009,8 +3009,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.1
   },
   {
@@ -3019,7 +3019,7 @@
     "title": "Beauty of Joseon - Green Plum Refresing Cleanser",
     "sku": "",
     "price": 15990.0,
-    "stock": 0,
+    "stock": 3,
     "product_type": "Limpiador en Espuma",
     "vendor": "Beauty of Joseon",
     "tags": [
@@ -3034,7 +3034,7 @@
     "tags_str": "Acné / Granos, Grasa, Mixta, Sebo, Seca, Sensible, Vegano",
     "handle": "beauty-of-joseon-green-plum-refresing-cleanser",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Beauty-of-Joseon-Green-Plum-Refresing-Cleanser-1.webp?v=1722441025",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -3108,7 +3108,7 @@
     "sales_score": 0.3,
     "total_sold": 6,
     "order_count": 6,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.3
   },
   {
     "product_id": "8803305980128",
@@ -3210,8 +3210,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
+    "total_sold": 2,
+    "order_count": 2,
     "final_ranking_score": 0.1
   },
   {
@@ -3317,7 +3317,7 @@
     "title": "Beauty of Joseon - Matte Sun Stick : Mugwort + Camilia (SPF 50+ PA++++) 18gr",
     "sku": "8809864766884",
     "price": 21990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Protector Solar",
     "vendor": "Beauty of Joseon",
     "tags": [
@@ -3333,7 +3333,7 @@
     "tags_str": "Grasa, Manchas / Pigmentación, Mixta, Poros Dilatados, Protección UV, Sebo, uv, Vegano",
     "handle": "beauty-of-joseon-matte-sun-stick-mugwort-camilia-spf-50-pa-18gr",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/beautyofjoseon-800x960-1.jpg?v=1707797109",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "429388136672",
@@ -3398,9 +3398,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
-    "final_ranking_score": 0.1
+    "total_sold": 5,
+    "order_count": 5,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8249465536736",
@@ -3570,8 +3570,8 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 17,
-    "order_count": 16,
+    "total_sold": 15,
+    "order_count": 14,
     "final_ranking_score": 0.5
   },
   {
@@ -3580,7 +3580,7 @@
     "title": "Beauty of Joseon - Relief Sun Aqua Fresh Rice B5",
     "sku": "",
     "price": 21990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Protector Solar",
     "vendor": "Beauty of Joseon",
     "tags": [
@@ -3653,8 +3653,8 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 17,
-    "order_count": 17,
+    "total_sold": 16,
+    "order_count": 16,
     "final_ranking_score": 0.5
   },
   {
@@ -3735,7 +3735,7 @@
     "title": "Beauty of Joseon - Revive Eye Serum : Ginseng+Retinal",
     "sku": "",
     "price": 22990.0,
-    "stock": -1,
+    "stock": 1,
     "product_type": "Contorno de Ojos",
     "vendor": "Beauty of Joseon",
     "tags": [
@@ -3747,7 +3747,7 @@
     "tags_str": "Arrugas / Antiedad, Manchas / Pigmentación, Seca, Sensible",
     "handle": "beauty-of-joseon-revive-eye-serum-ginseng-retinal",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/BOJ-Eye-Serum-1.webp?v=1722441335",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -3807,7 +3807,7 @@
     "sales_score": 0.5,
     "total_sold": 11,
     "order_count": 11,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.5
   },
   {
     "product_id": "8249468354784",
@@ -3815,7 +3815,7 @@
     "title": "Beauty of Joseon -Glow Serum Propolis + Niacinamide",
     "sku": "8809657114960",
     "price": 19990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Serum",
     "vendor": "Beauty of Joseon",
     "tags": [
@@ -3828,7 +3828,7 @@
     "tags_str": "Arrugas / Antiedad, Manchas / Pigmentación, Seca, Sensible, Vegano",
     "handle": "beauty-of-joseon-glow-serum-propolis-niacinamide",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/Beauty-of-Joseon-Glow-Serum-Propolis-Niacinamide-1-232.jpg?v=1707709392",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -3888,7 +3888,7 @@
     "sales_score": 0.1,
     "total_sold": 2,
     "order_count": 2,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8747169612000",
@@ -3977,7 +3977,7 @@
     "title": "Biodance Bio-Collagen Real Deep Mask",
     "sku": "8809937360834",
     "price": 8990.0,
-    "stock": 14,
+    "stock": 7,
     "product_type": "Mascarilla",
     "vendor": "Biodance",
     "tags": [],
@@ -4019,11 +4019,11 @@
       "Mascarillas",
       "Skincare"
     ],
-    "popularity_score": 0.5,
-    "sales_score": 0.5,
-    "total_sold": 15,
-    "order_count": 13,
-    "final_ranking_score": 0.5
+    "popularity_score": 0.7,
+    "sales_score": 0.7,
+    "total_sold": 21,
+    "order_count": 17,
+    "final_ranking_score": 0.7
   },
   {
     "product_id": "8811217617120",
@@ -4031,7 +4031,7 @@
     "title": "Biodance Hydro Cera-nol Real Deep Mask",
     "sku": "8809937360964",
     "price": 8990.0,
-    "stock": 3,
+    "stock": 1,
     "product_type": "Mascarilla",
     "vendor": "Biodance",
     "tags": [],
@@ -4068,8 +4068,8 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 11,
-    "order_count": 10,
+    "total_sold": 13,
+    "order_count": 12,
     "final_ranking_score": 0.5
   },
   {
@@ -4078,14 +4078,14 @@
     "title": "Biodance Radiant Vita Niacinamide Real Deep Mask",
     "sku": "8809937361459",
     "price": 8990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Mascarilla",
     "vendor": "Biodance",
     "tags": [],
     "tags_str": "",
     "handle": "biodance-radiant-vita-niacinamide-real-deep-mask",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/BIODANCE05_BIODANCE_Radiant_Vita_Niacinamide_Real_Deep_Mask_1_700x_ef2e3655-7737-4a05-bd2d-bbe5349970cd.webp?v=1743089553",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "459361255648",
@@ -4117,7 +4117,7 @@
     "sales_score": 0.3,
     "total_sold": 8,
     "order_count": 7,
-    "final_ranking_score": 0.3
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8857971556576",
@@ -6773,14 +6773,14 @@
     "title": "Centellian24 Parches Madeca 21 Spot Cure Patch 24ea",
     "sku": "",
     "price": 4990.0,
-    "stock": 2,
+    "stock": 0,
     "product_type": "Parches Cosmeticos / Hidroloides",
     "vendor": "Centelian24",
     "tags": [],
     "tags_str": "",
     "handle": "centellian24-parches-madeca-21-spot-cure-patch-24ea",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/CEN001221_Clear-Spot-Cure-Patch-24ea_001-1.jpg?v=1729307120",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "429423329504",
@@ -6810,9 +6810,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
-    "final_ranking_score": 0.1
+    "total_sold": 3,
+    "order_count": 3,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8251420442848",
@@ -7748,7 +7748,7 @@
     "title": "CosRX Bha Blackhead Power Liquid 100 Ml",
     "sku": "8809416470054",
     "price": 26990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tonico Exfoliante",
     "vendor": "CosRX",
     "tags": [
@@ -7762,7 +7762,7 @@
     "tags_str": "Acné / Granos, Arrugas / Antiedad, Grasa, Manchas / Pigmentación, Mixta, Poros Dilatados",
     "handle": "cosrx-bha-blackhead-liquid-100-ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/bhablackheadpower1.jpg?v=1707711222",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -7836,7 +7836,7 @@
     "sales_score": 0.1,
     "total_sold": 4,
     "order_count": 4,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8251095318752",
@@ -7844,7 +7844,7 @@
     "title": "CosRX Centella Blemish Cream",
     "sku": "8809416470368",
     "price": 23990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Hidratante",
     "vendor": "CosRX",
     "tags": [
@@ -7856,7 +7856,7 @@
     "tags_str": "Acné / Granos, Grasa, Sensible, Vegano",
     "handle": "cosrx-centella-blemish-cream",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/6145_shop2_649167.jpg?v=1707860521",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -7909,7 +7909,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8251358544096",
@@ -8394,7 +8394,7 @@
     "title": "CosRX Hyaluronic Cream 100 Ml",
     "sku": "8809416470122",
     "price": 26990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Hidratante",
     "vendor": "CosRX",
     "tags": [
@@ -8406,7 +8406,7 @@
     "tags_str": "Arrugas / Antiedad, Seca, Sensible, Vegano",
     "handle": "cosrx-hyaluronic-cream-100-ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/cosrx-hyaluronic-cream_fd8e5ac7-1079-4e6b-8468-d1f0e903ef4d.png?v=1707881151",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -8459,7 +8459,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8683257102560",
@@ -8613,7 +8613,7 @@
     "title": "CosRX Low pH Good Morning Gel Cleanser 150ml",
     "sku": "8809416470511",
     "price": 16990.0,
-    "stock": 0,
+    "stock": 2,
     "product_type": "Limpiador en Espuma",
     "vendor": "CosRX",
     "tags": [
@@ -8628,7 +8628,7 @@
     "tags_str": "Acné / Granos, Arrugas / Antiedad, Grasa, Mixta, Poros Dilatados, Sebo, Vegano",
     "handle": "cosrx-good-morning-gel-cleanser-150ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/51dLP-09nL._SL1500_-600x600-1.jpg?v=1707863160",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -8702,7 +8702,7 @@
     "sales_score": 0.1,
     "total_sold": 4,
     "order_count": 4,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8251413004512",
@@ -8710,7 +8710,7 @@
     "title": "CosRX Pimple Master 24 Patches – Parche Antiacne",
     "sku": "",
     "price": 4990.0,
-    "stock": 0,
+    "stock": 3,
     "product_type": "Parches Cosmeticos / Hidroloides",
     "vendor": "CosRX",
     "tags": [
@@ -8719,7 +8719,7 @@
     "tags_str": "Acné / Granos",
     "handle": "cosrx-pimple-master-24-patches-parche-antiacne",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/61gz4LMT4YL._SL1500_-600x604-1.webp?v=1707878619",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -8756,9 +8756,9 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 12,
-    "order_count": 12,
-    "final_ranking_score": 0.0
+    "total_sold": 13,
+    "order_count": 13,
+    "final_ranking_score": 0.5
   },
   {
     "product_id": "8251096432864",
@@ -8925,8 +8925,8 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 8,
-    "order_count": 8,
+    "total_sold": 6,
+    "order_count": 6,
     "final_ranking_score": 0.3
   },
   {
@@ -10061,10 +10061,10 @@
       "Sebo",
       "Skincare"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
     "final_ranking_score": 0.0
   },
   {
@@ -10989,8 +10989,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.1
   },
   {
@@ -12218,8 +12218,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -13403,7 +13403,7 @@
     "title": "Isntree - Hyaluronic Acid Aqua Gel Cream",
     "sku": "8809686383566",
     "price": 19990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Hidratante",
     "vendor": "Isntree",
     "tags": [
@@ -13417,7 +13417,7 @@
     "tags_str": "Arrugas / Antiedad, Grasa, Mixta, Seca, Sensible, Vegano",
     "handle": "isntree-hyaluronic-acid-aqua-gel-cream",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/ISN03_Hyaluronic_Acid_Aqua_Gel_Cream_1.webp?v=1709780193",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -13484,7 +13484,7 @@
     "sales_score": 0.5,
     "total_sold": 14,
     "order_count": 14,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.5
   },
   {
     "product_id": "8282555285728",
@@ -13565,7 +13565,7 @@
     "title": "Isntree - Hyaluronic Acid Toner",
     "sku": "8809540517533",
     "price": 17990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tonico",
     "vendor": "Isntree",
     "tags": [
@@ -13578,7 +13578,7 @@
     "tags_str": "Arrugas, Arrugas / Antiedad, Seca, Sensible, Vegano",
     "handle": "isntree-hyaluronic-acid-toner",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/ISN11_Hyaluronic_Acid_Water_Toner_Renewed.webp?v=1709780018",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -13631,7 +13631,7 @@
     "sales_score": 0.1,
     "total_sold": 5,
     "order_count": 5,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8460180881632",
@@ -13639,7 +13639,7 @@
     "title": "Isntree - Hyaluronic Acid Water Sleeping Mask",
     "sku": "",
     "price": 19990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Hidratante",
     "vendor": "Isntree",
     "tags": [
@@ -13653,7 +13653,7 @@
     "tags_str": "Antiedad, Arrugas, Arrugas / Antiedad, Seca, Sensible, Vegano",
     "handle": "isntree-hyaluronic-acid-water-sleeping-mask",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/ISN04_ISNTREE_Hyaluronic_Acid_Water_Sleeping_Mask_100ml.webp?v=1715137698",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -13706,7 +13706,7 @@
     "sales_score": 0.1,
     "total_sold": 2,
     "order_count": 2,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8287665979616",
@@ -13868,8 +13868,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
+    "total_sold": 4,
+    "order_count": 4,
     "final_ranking_score": 0.0
   },
   {
@@ -14224,7 +14224,7 @@
     "title": "Isntree Hyper Retinol EX 1.0 Serum",
     "sku": "",
     "price": 19990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Serum",
     "vendor": "Isntree",
     "tags": [
@@ -14236,7 +14236,7 @@
     "tags_str": "Arrugas / Antiedad, Seca, Sensible, Vegano",
     "handle": "isntree-hyper-retinol-ex-1-0-serum",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Isntree-HYPER-RETINOL-EX-1.0-SERUM-1.webp?v=1731634141",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -14287,9 +14287,9 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 7,
-    "order_count": 7,
-    "final_ranking_score": 0.3
+    "total_sold": 8,
+    "order_count": 8,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8750489174240",
@@ -14380,7 +14380,7 @@
     "title": "IUNIK Beta Glucano Daily Moisture Cream",
     "sku": "8809728080316",
     "price": 19990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Hidratante",
     "vendor": "Iunik",
     "tags": [
@@ -14393,7 +14393,7 @@
     "tags_str": "Arrugas / Antiedad, Grasa, Mixta, Poros Dilatados, Vegano",
     "handle": "iunik-beta-glucano-daily-moisture-cream",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/IUNIK-Beta-Glucan-Daily-Moisture-Cream-288.jpg?v=1707709436",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -14451,9 +14451,9 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 12,
-    "order_count": 12,
-    "final_ranking_score": 0.5
+    "total_sold": 13,
+    "order_count": 13,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8249476120800",
@@ -14636,11 +14636,11 @@
       "Protector Solar",
       "Skincare"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
-    "final_ranking_score": 0.1
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8249476579552",
@@ -14648,7 +14648,7 @@
     "title": "IUNIK Centella Calming Gel Cream",
     "sku": "8809728080118",
     "price": 19990.0,
-    "stock": 0,
+    "stock": 2,
     "product_type": "Hidratante",
     "vendor": "Iunik",
     "tags": [
@@ -14663,7 +14663,7 @@
     "tags_str": "Acné / Granos, Arrugas / Antiedad, Grasa, Manchas / Pigmentación, Poros Dilatados, Sensible, Vegano",
     "handle": "iunik-centella-calming-gel-cream",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/iUnik-Centella-Calming-Gel-Cream.jpg?v=1707709820",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -14737,7 +14737,7 @@
     "sales_score": 0.5,
     "total_sold": 12,
     "order_count": 12,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.5
   },
   {
     "product_id": "8249468584160",
@@ -16195,14 +16195,14 @@
     "title": "Kundal Honey Macadamia Treatment Cherry Blossom",
     "sku": "339",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Acondicionador",
     "vendor": "Kundal",
     "tags": [],
     "tags_str": "",
     "handle": "kundal-honey-macadamia-treatment-cherry-blossom",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/Kundal-Honey-Macadamia-Conditioner-Cherry-Blossom.jpg?v=1707709487",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430157594848",
@@ -16227,7 +16227,7 @@
     "sales_score": 0.1,
     "total_sold": 2,
     "order_count": 2,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249471828192",
@@ -16275,14 +16275,14 @@
     "title": "Kundal Shampoo Anticaida- Cherry Blossom",
     "sku": "8809568745772",
     "price": 15990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Shampoo",
     "vendor": "Kundal",
     "tags": [],
     "tags_str": "",
     "handle": "kundal-shampoo-anticaida-cherry-blossom",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/Kundal-Shampoo-Anti-Caida-1-1.jpg?v=1707709712",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430157594848",
@@ -16315,14 +16315,14 @@
     "title": "Kundal Tea Tree &amp; Macadamia Shampoo - Cherry Blossom",
     "sku": "326",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Shampoo",
     "vendor": "Kundal",
     "tags": [],
     "tags_str": "",
     "handle": "kundal-tea-tree-amp-macadamia-shampoo-cherry-blossom",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/326.jpg?v=1707709482",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430157594848",
@@ -16347,7 +16347,7 @@
     "sales_score": 0.1,
     "total_sold": 2,
     "order_count": 2,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249471729888",
@@ -16583,14 +16583,14 @@
     "title": "Lily By Red - Bloody Liar Coating Tint - Tintas Glossy",
     "sku": "",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-bloody-liar-coating-tint-tintas-glossy",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/BloodyLiarCoatingTintRenewalLilybyred_800x800_b17befb1-6c80-41af-8463-c4df154f93b7.webp?v=1715227811",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -16622,7 +16622,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8464814833888",
@@ -16771,14 +16771,14 @@
     "title": "Lily By Red - Bloody Liar Coating Tint - Tintas Glossy",
     "sku": "",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-bloody-liar-coating-tint-tintas-glossy",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/BloodyLiarCoatingTintRenewalLilybyred_800x800_b17befb1-6c80-41af-8463-c4df154f93b7.webp?v=1715227811",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -16810,7 +16810,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8464814833888",
@@ -16818,14 +16818,14 @@
     "title": "Lily By Red - Bloody Liar Coating Tint - Tintas Glossy",
     "sku": "",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-bloody-liar-coating-tint-tintas-glossy",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/BloodyLiarCoatingTintRenewalLilybyred_800x800_b17befb1-6c80-41af-8463-c4df154f93b7.webp?v=1715227811",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -17979,7 +17979,7 @@
     "title": "Lily by Red Juicy Liar Water Tint Tinta Labial",
     "sku": "8809716942176",
     "price": 12990.0,
-    "stock": 1,
+    "stock": 2,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
@@ -18026,14 +18026,14 @@
     "title": "Lily by Red Juicy Liar Water Tint Tinta Labial",
     "sku": "789",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-juicy-liar-water-tint-tinta-labial",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/JuicyLiarWaterTint_Renovado-01_800x800_5e11fd76-15f8-430f-ae2e-1630f2ce646b.webp?v=1707973042",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -18065,7 +18065,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249486639328",
@@ -18073,14 +18073,14 @@
     "title": "Lily by Red Juicy Liar Water Tint Tinta Labial",
     "sku": "790",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-juicy-liar-water-tint-tinta-labial",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/JuicyLiarWaterTint_Renovado-01_800x800_5e11fd76-15f8-430f-ae2e-1630f2ce646b.webp?v=1707973042",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -18112,7 +18112,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249486639328",
@@ -18120,14 +18120,14 @@
     "title": "Lily by Red Juicy Liar Water Tint Tinta Labial",
     "sku": "791",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-juicy-liar-water-tint-tinta-labial",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/JuicyLiarWaterTint_Renovado-01_800x800_5e11fd76-15f8-430f-ae2e-1630f2ce646b.webp?v=1707973042",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -18159,7 +18159,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249486639328",
@@ -18167,14 +18167,14 @@
     "title": "Lily by Red Juicy Liar Water Tint Tinta Labial",
     "sku": "8809716942213",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-juicy-liar-water-tint-tinta-labial",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/JuicyLiarWaterTint_Renovado-01_800x800_5e11fd76-15f8-430f-ae2e-1630f2ce646b.webp?v=1707973042",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -18206,7 +18206,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249486639328",
@@ -18214,14 +18214,14 @@
     "title": "Lily by Red Juicy Liar Water Tint Tinta Labial",
     "sku": "793",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-juicy-liar-water-tint-tinta-labial",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/JuicyLiarWaterTint_Renovado-01_800x800_5e11fd76-15f8-430f-ae2e-1630f2ce646b.webp?v=1707973042",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -18253,7 +18253,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249486639328",
@@ -18261,14 +18261,14 @@
     "title": "Lily by Red Juicy Liar Water Tint Tinta Labial",
     "sku": "8809716942237",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
     "tags_str": "",
     "handle": "lily-by-red-juicy-liar-water-tint-tinta-labial",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/JuicyLiarWaterTint_Renovado-01_800x800_5e11fd76-15f8-430f-ae2e-1630f2ce646b.webp?v=1707973042",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429423722720",
@@ -18300,7 +18300,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249486639328",
@@ -18308,7 +18308,7 @@
     "title": "Lily by Red Juicy Liar Water Tint Tinta Labial",
     "sku": "795",
     "price": 12990.0,
-    "stock": 1,
+    "stock": 2,
     "product_type": "Tintas Labiales",
     "vendor": "Lily by Red",
     "tags": [],
@@ -20268,11 +20268,11 @@
       "Serum",
       "Skincare"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
-    "final_ranking_score": 0.1
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8858157580512",
@@ -20422,8 +20422,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -20783,8 +20783,8 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 7,
-    "order_count": 6,
+    "total_sold": 6,
+    "order_count": 5,
     "final_ranking_score": 0.0
   },
   {
@@ -21028,7 +21028,7 @@
     "title": "Mixsoon - Bean Eye Cream – Crema Contorno de ojos 20ml",
     "sku": "",
     "price": 34990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Contorno de Ojos",
     "vendor": "Mixsoon",
     "tags": [
@@ -21124,8 +21124,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.1
   },
   {
@@ -21523,7 +21523,7 @@
     "title": "Mixsoon - Essential Glass Skin Duo (Essence, Serum)",
     "sku": "",
     "price": 64990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Set",
     "vendor": "Mixsoon",
     "tags": [
@@ -21532,7 +21532,7 @@
     "tags_str": "Nuevo",
     "handle": "mixsoon-essential-glass-skin-duo-essence-serum",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/714orhBQV4L._SX466.jpg?v=1749235289",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "461960315104",
@@ -21562,9 +21562,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
-    "final_ranking_score": 0.1
+    "total_sold": 5,
+    "order_count": 5,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8882204279008",
@@ -22081,7 +22081,7 @@
     "title": "Mixsoon Bean Essence 30ml",
     "sku": "",
     "price": 29990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Esencia",
     "vendor": "Mixsoon",
     "tags": [
@@ -22094,7 +22094,7 @@
     "tags_str": "Arrugas, Arrugas / Antiedad, Poros Dilatados, Seca, Sensible",
     "handle": "mixsoon-bean-essence-30ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/39f2814997a8e3f51154b2fc912fc193.jpg?v=1747082408",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -22152,9 +22152,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
-    "final_ranking_score": 0.1
+    "total_sold": 3,
+    "order_count": 3,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8840805155040",
@@ -22162,7 +22162,7 @@
     "title": "Mixsoon Bean Essence 50ml",
     "sku": "",
     "price": 37990.0,
-    "stock": 2,
+    "stock": 1,
     "product_type": "Serum",
     "vendor": "Mixsoon",
     "tags": [
@@ -22272,8 +22272,8 @@
     ],
     "popularity_score": 0.7,
     "sales_score": 0.7,
-    "total_sold": 35,
-    "order_count": 35,
+    "total_sold": 36,
+    "order_count": 36,
     "final_ranking_score": 0.7
   },
   {
@@ -22450,7 +22450,7 @@
     "title": "Mixsoon Centella Cleansing Foam 150ml",
     "sku": "",
     "price": 19990.0,
-    "stock": 4,
+    "stock": 3,
     "product_type": "Limpiador en Espuma",
     "vendor": "Mixsoon",
     "tags": [
@@ -22528,8 +22528,8 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 19,
-    "order_count": 19,
+    "total_sold": 20,
+    "order_count": 20,
     "final_ranking_score": 0.5
   },
   {
@@ -22538,7 +22538,7 @@
     "title": "Mixsoon Glacier Water Hyaluronic Acid Serum 100ml",
     "sku": "",
     "price": 29990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Serum",
     "vendor": "Mixsoon",
     "tags": [
@@ -22553,7 +22553,7 @@
     "tags_str": "Arrugas, Grasa, Hidratación, Manchas / Pigmentación, Mixta, Seca, Sensible",
     "handle": "mixsoon-glacier-water-hyaluronic-acid-serum-100ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/MIXSOON_-Glacier-Water-Hyaluronic-Acid-Serum_300ml_001.webp?v=1741109125",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -22630,11 +22630,11 @@
       "Serum",
       "Skincare"
     ],
-    "popularity_score": 0.3,
-    "sales_score": 0.3,
-    "total_sold": 10,
-    "order_count": 10,
-    "final_ranking_score": 0.3
+    "popularity_score": 0.5,
+    "sales_score": 0.5,
+    "total_sold": 11,
+    "order_count": 11,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8840816722144",
@@ -22731,7 +22731,7 @@
     "title": "Mixsoon Soondy Centella Asiatica Essence [100ml]",
     "sku": "",
     "price": 35990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Esencia",
     "vendor": "Mixsoon",
     "tags": [
@@ -22746,7 +22746,7 @@
     "tags_str": "Antiedad, Grasa, Hidratación, Mixta, Rojez, Seca, Sensible",
     "handle": "mixsoon-soondy-centella-asiatica-essence-100ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Mixsoon_soondy_1.webp?v=1741108199",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -22827,7 +22827,7 @@
     "sales_score": 0.3,
     "total_sold": 6,
     "order_count": 6,
-    "final_ranking_score": 0.3
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8882651496672",
@@ -22835,7 +22835,7 @@
     "title": "Mixsoon Soybean Milk Pad",
     "sku": "",
     "price": 2990.0,
-    "stock": 4,
+    "stock": 3,
     "product_type": "Mascarilla",
     "vendor": "Mixsoon",
     "tags": [
@@ -22881,8 +22881,8 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 16,
-    "order_count": 12,
+    "total_sold": 17,
+    "order_count": 13,
     "final_ranking_score": 0.5
   },
   {
@@ -23495,14 +23495,14 @@
     "title": "Nolahour Parche Spot Eraser Blue – Spot Recovery",
     "sku": "",
     "price": 6990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Parches Cosmeticos / Hidroloides",
     "vendor": "Nolahour",
     "tags": [],
     "tags_str": "",
     "handle": "nolahour-parche-spot-eraser-blue-spot-recovery",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/PW_NOL000102_Spot-Eraser-Blue-_-Spot-Recovery_001.jpg?v=1729307261",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "450279276768",
@@ -23532,9 +23532,9 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 11,
-    "order_count": 11,
-    "final_ranking_score": 0.5
+    "total_sold": 12,
+    "order_count": 12,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8721621319904",
@@ -23542,14 +23542,14 @@
     "title": "Nolahour Parche Spot Eraser Green – Early Stage",
     "sku": "",
     "price": 6990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Parches Cosmeticos / Hidroloides",
     "vendor": "Nolahour",
     "tags": [],
     "tags_str": "",
     "handle": "nolahour-parche-spot-eraser-green-early-stage",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/PW_NOL000101_Spot-Eraser-Green-_-Early-Stage_001.png?v=1729307464",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "450279276768",
@@ -23581,7 +23581,7 @@
     "sales_score": 0.3,
     "total_sold": 6,
     "order_count": 6,
-    "final_ranking_score": 0.3
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8721620205792",
@@ -23589,14 +23589,14 @@
     "title": "Nolahour Parche Spot Eraser Orange – Red Spot",
     "sku": "",
     "price": 6990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Parches Cosmeticos / Hidroloides",
     "vendor": "Nolahour",
     "tags": [],
     "tags_str": "",
     "handle": "nolahour-parche-spot-eraser-orange-red-spot",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/PW_NOL000103_Spot-Eraser-Orange-_-Red-Spot_001.jpg?v=1729307345",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "450279276768",
@@ -23626,9 +23626,9 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 6,
-    "order_count": 6,
-    "final_ranking_score": 0.3
+    "total_sold": 7,
+    "order_count": 7,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8865264664800",
@@ -23733,7 +23733,7 @@
     "title": "Numbuzin - No.2 Water Collagen 65% Voluming Sheet Mask",
     "sku": "",
     "price": 3490.0,
-    "stock": 4,
+    "stock": 3,
     "product_type": "Mascarilla",
     "vendor": "Numbuzin",
     "tags": [],
@@ -23768,11 +23768,11 @@
       "Numbuzin",
       "Skincare"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
-    "final_ranking_score": 0.0
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 1,
+    "order_count": 1,
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8882227708128",
@@ -23939,7 +23939,7 @@
     "title": "Numbuzin No. 1 Pantothenic B5 Active Soothing Serum 50ml",
     "sku": "8809652583211",
     "price": 29990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Serum",
     "vendor": "Numbuzin",
     "tags": [
@@ -23950,7 +23950,7 @@
     "tags_str": "Arrugas / Antiedad, Sensible, Vegano",
     "handle": "numbuzin-no-1-pantothenic-b5-active-soothing-serum-50ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/No.1PantothenicB5ActiveSoothingSerum50ml.webp?v=1731630026",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -23994,9 +23994,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
-    "final_ranking_score": 0.1
+    "total_sold": 4,
+    "order_count": 4,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8747175280864",
@@ -24004,7 +24004,7 @@
     "title": "Numbuzin No. 1 Pure-Full Calming Herb Toner",
     "sku": "8809652581453",
     "price": 25990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tonico",
     "vendor": "Numbuzin",
     "tags": [
@@ -24015,7 +24015,7 @@
     "tags_str": "Rojez, Sensible, Vegano",
     "handle": "numbuzin-no-1-pure-full-calming-herb-toner",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/No.1Pure-FullCalmingHerbToner.webp?v=1731628718",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "452367778016",
@@ -24061,7 +24061,7 @@
     "sales_score": 0.1,
     "total_sold": 3,
     "order_count": 3,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8747189010656",
@@ -24118,8 +24118,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 5,
-    "order_count": 5,
+    "total_sold": 4,
+    "order_count": 4,
     "final_ranking_score": 0.1
   },
   {
@@ -24522,7 +24522,7 @@
     "title": "NUMBUZIN Nº1 – Pantothenic B5 Active Soothing Cream",
     "sku": "8809652583228",
     "price": 28990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Hidratante",
     "vendor": "Numbuzin",
     "tags": [
@@ -24536,7 +24536,7 @@
     "tags_str": "Acné / Granos, Grasa, Rojeces, Rojez, Sensible, Vegano",
     "handle": "numbuzin-nº1-pantothenic-b5-active-soothing-cream",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/1-panthotenic-b5-cream.jpg?v=1738121090",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -24594,9 +24594,9 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 7,
-    "order_count": 7,
-    "final_ranking_score": 0.0
+    "total_sold": 6,
+    "order_count": 6,
+    "final_ranking_score": 0.3
   },
   {
     "product_id": "8865265844448",
@@ -24604,7 +24604,7 @@
     "title": "NUMBUZIN Nº5+ Vitamin Concentrate Serum Despigmentante -30 ml",
     "sku": "8809652581774",
     "price": 29990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Serum",
     "vendor": "Numbuzin",
     "tags": [
@@ -24617,7 +24617,7 @@
     "tags_str": "Grasa, Manchas / Pigmentación, Mixta, Seca, Sensible",
     "handle": "numbuzin-nº5-vitamin-concentrate-serum-despigmentante-30-ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/5-vitamin-concentred-serum.jpg?v=1744233253",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108311776",
@@ -24684,7 +24684,7 @@
     "sales_score": 0.1,
     "total_sold": 2,
     "order_count": 2,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8257127776480",
@@ -24786,14 +24786,14 @@
     "title": "OOTD Collagen Supreme Mask",
     "sku": "",
     "price": 1990.0,
-    "stock": 2,
+    "stock": 0,
     "product_type": "Mascarilla",
     "vendor": "Ootd",
     "tags": [],
     "tags_str": "",
     "handle": "ootd-collagen-supreme-mask",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/PW_OOT000601_Collagen-Supreme-Mask_001.jpg?v=1729307862",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "429736657120",
@@ -24823,9 +24823,9 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 14,
-    "order_count": 10,
-    "final_ranking_score": 0.5
+    "total_sold": 16,
+    "order_count": 11,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8797398466784",
@@ -24920,8 +24920,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.0
   },
   {
@@ -25011,7 +25011,7 @@
     "title": "OOTD Intensive Eye Serum",
     "sku": "",
     "price": 13990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Contorno de Ojos",
     "vendor": "Ootd",
     "tags": [
@@ -25026,7 +25026,7 @@
     "tags_str": "Arrugas / Antiedad, Grasa, Manchas / Pigmentación, Mixta, Seca, Sensible, Vegano",
     "handle": "ootd-intensive-eye-serum",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Intensive-Eye-Serum_001.webp?v=1736738899",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -25098,9 +25098,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
-    "final_ranking_score": 0.1
+    "total_sold": 3,
+    "order_count": 3,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8797399777504",
@@ -26172,10 +26172,10 @@
       "Peripera",
       "Tintas Labiales"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
     "final_ranking_score": 0.0
   },
   {
@@ -26278,14 +26278,14 @@
     "title": "Peripera - Ink Airy Velvet - Peach Collection- Tintas Labiales",
     "sku": "8809828419728",
     "price": 12990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tintas Labiales",
     "vendor": "Peripera",
     "tags": [],
     "tags_str": "",
     "handle": "peripera-ink-airy-velvet-peach-collection-tintas-labiales",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/ink_airy_velvet_peach_11zon.webp?v=1708050348",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430727889120",
@@ -26317,7 +26317,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249472549088",
@@ -28475,10 +28475,10 @@
       "Peripera",
       "Tintas Labiales"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
     "final_ranking_score": 0.0
   },
   {
@@ -29509,10 +29509,10 @@
       "Peripera",
       "Tintas Labiales"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
     "final_ranking_score": 0.0
   },
   {
@@ -32104,8 +32104,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.1
   },
   {
@@ -32161,14 +32161,14 @@
     "title": "ROM&ND - JUICY LASTING TINT - Tinta Labial",
     "sku": "8809625240271",
     "price": 13990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Tintas Labiales",
     "vendor": "Rom&nd",
     "tags": [],
     "tags_str": "",
     "handle": "rom-nd-juicy-lasting-tint-tinta-labial",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Juicy-lasting-tint-romand2.webp?v=1708139542",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430727889120",
@@ -32198,9 +32198,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
-    "final_ranking_score": 0.1
+    "total_sold": 4,
+    "order_count": 4,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8249505120480",
@@ -32527,8 +32527,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.1
   },
   {
@@ -32715,8 +32715,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
+    "total_sold": 2,
+    "order_count": 2,
     "final_ranking_score": 0.0
   },
   {
@@ -32819,14 +32819,14 @@
     "title": "ROM&ND - JUICY LASTING TINT - Tinta Labial",
     "sku": "",
     "price": 13990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Tintas Labiales",
     "vendor": "Rom&nd",
     "tags": [],
     "tags_str": "",
     "handle": "rom-nd-juicy-lasting-tint-tinta-labial",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Juicy-lasting-tint-romand2.webp?v=1708139542",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430727889120",
@@ -32854,10 +32854,10 @@
       "Rom&nd",
       "Tintas Labiales"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -33982,10 +33982,10 @@
       "Maquillaje",
       "Rom&nd"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
     "final_ranking_score": 0.0
   },
   {
@@ -34675,8 +34675,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
+    "total_sold": 2,
+    "order_count": 2,
     "final_ranking_score": 0.1
   },
   {
@@ -34685,7 +34685,7 @@
     "title": "Round Lab - 1025 Dokdo Cleanser",
     "sku": "8809738608364",
     "price": 16990.0,
-    "stock": 2,
+    "stock": 1,
     "product_type": "Limpiador en Espuma",
     "vendor": "Round Lab",
     "tags": [
@@ -34774,7 +34774,7 @@
     "title": "Round Lab - Birch Juice Moisturizing Sun Screen",
     "sku": "8809782551814",
     "price": 24990.0,
-    "stock": 0,
+    "stock": 2,
     "product_type": "Protector Solar",
     "vendor": "Round Lab",
     "tags": [
@@ -34789,7 +34789,7 @@
     "tags_str": "Arrugas / Antiedad, Manchas / Pigmentación, Protección UV, Seca, Sensible, uv, Vegano",
     "handle": "round-lab-birch-juice-moisturizing-sun-screen",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/Round-Lab-Birch-Juice-Moisturizing-Sun-Cream-c251.jpg?v=1707709419",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -34849,7 +34849,7 @@
     "sales_score": 0.3,
     "total_sold": 6,
     "order_count": 6,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.3
   },
   {
     "product_id": "8249465897184",
@@ -34857,7 +34857,7 @@
     "title": "Round Lab - Dokdo Toner",
     "sku": "20",
     "price": 20990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Tonico",
     "vendor": "Round Lab",
     "tags": [
@@ -34871,7 +34871,7 @@
     "tags_str": "Acné / Granos, Arrugas / Antiedad, Mixta, Poros Dilatados, Sensible, Vegano",
     "handle": "round-lab-dokdo-toner",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/Round-Lab-1025-Dokd-Toner-20.jpg?v=1707709287",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -34934,10 +34934,10 @@
       "Skincare",
       "Tonico"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -35007,11 +35007,11 @@
       "Round Lab",
       "Skincare"
     ],
-    "popularity_score": 0.5,
-    "sales_score": 0.5,
-    "total_sold": 11,
-    "order_count": 11,
-    "final_ranking_score": 0.5
+    "popularity_score": 0.3,
+    "sales_score": 0.3,
+    "total_sold": 10,
+    "order_count": 10,
+    "final_ranking_score": 0.3
   },
   {
     "product_id": "8714563780832",
@@ -35059,14 +35059,14 @@
     "title": "Round Lab Birch Juice Moisturizing Mask",
     "sku": "8809624723119",
     "price": 2990.0,
-    "stock": 0,
+    "stock": 3,
     "product_type": "Mascarilla",
     "vendor": "Round Lab",
     "tags": [],
     "tags_str": "",
     "handle": "round-lab-birch-juice-moisturizing-mask",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Round-Lab-Birch-Juice-Moisturizing-1.webp?v=1744059484",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "429736657120",
@@ -35096,9 +35096,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
-    "final_ranking_score": 0.0
+    "total_sold": 3,
+    "order_count": 3,
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8714563879136",
@@ -35146,7 +35146,7 @@
     "title": "Round Lab Mugwort Calming Mask",
     "sku": "8809624723102",
     "price": 2990.0,
-    "stock": 3,
+    "stock": 1,
     "product_type": "Mascarilla",
     "vendor": "Round Lab",
     "tags": [],
@@ -35183,8 +35183,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
+    "total_sold": 5,
+    "order_count": 4,
     "final_ranking_score": 0.1
   },
   {
@@ -35473,7 +35473,7 @@
     "title": "SKIN1004 - Madagascar Centella Air-Fit Suncream Plus SPF50+ PA++++",
     "sku": "8809576261301",
     "price": 23990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Protector Solar",
     "vendor": "Skin1004",
     "tags": [
@@ -35488,7 +35488,7 @@
     "tags_str": "Grasa, Mixta, Protección UV, Seca, Sensible, uv, Vegano",
     "handle": "skin1004-madagascar-centella-air-fit-suncream-plus-spf50-pa",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/SKIN1004-MadagascarCentellaAir-FitSuncreamPlusSPF50_PA.webp?v=1722568797",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "460319424736",
@@ -35548,7 +35548,7 @@
     "sales_score": 0.1,
     "total_sold": 4,
     "order_count": 3,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8651894030560",
@@ -35629,7 +35629,7 @@
     "title": "SKIN1004 - Madagascar Centella Ampoule Foam 125ml",
     "sku": "8809576261127",
     "price": 17990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Limpiador en Espuma",
     "vendor": "Skin1004",
     "tags": [
@@ -35700,8 +35700,8 @@
     ],
     "popularity_score": 0.7,
     "sales_score": 0.7,
-    "total_sold": 24,
-    "order_count": 24,
+    "total_sold": 25,
+    "order_count": 25,
     "final_ranking_score": 0.7
   },
   {
@@ -35710,7 +35710,7 @@
     "title": "SKIN1004 - Madagascar Centella Cream 75 ml",
     "sku": "8809576260441",
     "price": 27990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Hidratante",
     "vendor": "Skin1004",
     "tags": [
@@ -35720,7 +35720,7 @@
     "tags_str": "Arrugas / Antiedad, Sensible",
     "handle": "skin1004-madagascar-centella-cream-75ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/PW_SKI000501_Madagascar-Centella-Cream_001.jpg?v=1729653609",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -35764,9 +35764,9 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 16,
-    "order_count": 16,
-    "final_ranking_score": 0.0
+    "total_sold": 17,
+    "order_count": 17,
+    "final_ranking_score": 0.5
   },
   {
     "product_id": "8747171119328",
@@ -35774,7 +35774,7 @@
     "title": "Skin1004 - Madagascar Centella Hyalu Cica Silky Fit Sun Stick",
     "sku": "8809913830214",
     "price": 24990.0,
-    "stock": 2,
+    "stock": 1,
     "product_type": "Protector Solar",
     "vendor": "Skin1004",
     "tags": [
@@ -35855,8 +35855,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 5,
+    "order_count": 5,
     "final_ranking_score": 0.1
   },
   {
@@ -35865,7 +35865,7 @@
     "title": "SKIN1004 - Madagascar Centella Light Cleansing Oil – Limpiador Oleoso 200ml",
     "sku": "8809576261110",
     "price": 23990.0,
-    "stock": 2,
+    "stock": 1,
     "product_type": "Limpiador Oleoso",
     "vendor": "Skin1004",
     "tags": [
@@ -35942,8 +35942,8 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 19,
-    "order_count": 18,
+    "total_sold": 20,
+    "order_count": 19,
     "final_ranking_score": 0.5
   },
   {
@@ -36032,7 +36032,7 @@
     "title": "SKIN1004 - Madagascar Centella Poremizing Light Gel Cream 75ml",
     "sku": "8809576261646",
     "price": 27990.0,
-    "stock": 1,
+    "stock": 2,
     "product_type": "Hidratante",
     "vendor": "Skin1004",
     "tags": [
@@ -36129,7 +36129,7 @@
     "title": "SKIN1004 - Madagascar Centella Probio-Cica Intensive Ampoule 50ml",
     "sku": "",
     "price": 27990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Serum",
     "vendor": "Skin1004",
     "tags": [
@@ -36140,7 +36140,7 @@
     "tags_str": "Arrugas / Antiedad, Seca, Sensible",
     "handle": "skin1004-madagascar-centella-probio-cica-intensive-ampoule-50ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/SKIN1004_PROBIO-CICA_CENTELLA21_1.webp?v=1736824350",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -36193,7 +36193,7 @@
     "sales_score": 0.1,
     "total_sold": 4,
     "order_count": 4,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8792853315808",
@@ -36333,7 +36333,7 @@
     "title": "SKIN1004 - Madagascar Centella Tone Brightening Capsule Ampoule 100ml",
     "sku": "",
     "price": 27990.0,
-    "stock": 2,
+    "stock": 1,
     "product_type": "Serum",
     "vendor": "Skin1004",
     "tags": [
@@ -36426,11 +36426,11 @@
       "Skin1004",
       "Skincare"
     ],
-    "popularity_score": 0.7,
-    "sales_score": 0.7,
-    "total_sold": 47,
-    "order_count": 45,
-    "final_ranking_score": 0.7
+    "popularity_score": 0.9,
+    "sales_score": 0.9,
+    "total_sold": 51,
+    "order_count": 49,
+    "final_ranking_score": 0.9
   },
   {
     "product_id": "8792855740640",
@@ -36525,8 +36525,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.1
   },
   {
@@ -36681,8 +36681,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
+    "total_sold": 2,
+    "order_count": 2,
     "final_ranking_score": 0.1
   },
   {
@@ -37083,10 +37083,10 @@
       "Pack / Set de viaje",
       "Skin1004"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
+    "popularity_score": 0.0,
+    "sales_score": 0.0,
+    "total_sold": 0,
+    "order_count": 0,
     "final_ranking_score": 0.0
   },
   {
@@ -37095,7 +37095,7 @@
     "title": "SKIN1004 Madagascar Centella Double Cleansing Duo",
     "sku": "",
     "price": 38990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Set",
     "vendor": "Skin1004",
     "tags": [
@@ -37111,7 +37111,7 @@
     "tags_str": "Grasa, Hidratación, Mixta, Poros Dilatados, Rojez, Sebo, Seca, Sensible",
     "handle": "skin1004-madagascar-centella-double-cleansing-duo",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/SKIN1004MadagascarCentellaDoubleCleansingDuo.webp?v=1741107454",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "460319686880",
@@ -37190,9 +37190,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 1,
-    "order_count": 1,
-    "final_ranking_score": 0.1
+    "total_sold": 2,
+    "order_count": 2,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8858473332960",
@@ -37200,7 +37200,7 @@
     "title": "Skin1004 Madagascar Centella Hyalu-Cica Blue Serum",
     "sku": "8809576260717",
     "price": 27990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Serum",
     "vendor": "Skin1004",
     "tags": [
@@ -37272,7 +37272,7 @@
     "title": "SKIN1004 Madagascar Centella Hyalu-Cica First Ampoule",
     "sku": "8809576261486",
     "price": 29990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Serum",
     "vendor": "Skin1004",
     "tags": [
@@ -37284,7 +37284,7 @@
     "tags_str": "Arrugas / Antiedad, Seca, Sensible, Vegano",
     "handle": "skin1004-madagascar-centella-hyalu-cica-first-ampoule",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/PW_SKI000801_SKIN1004-Madagascar-Centella-Hyalu-Cica-First-Ampoule-100ml_001.jpg?v=1728690821",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -37335,9 +37335,9 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 12,
-    "order_count": 12,
-    "final_ranking_score": 0.5
+    "total_sold": 13,
+    "order_count": 13,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8715174641888",
@@ -37513,8 +37513,8 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 17,
-    "order_count": 17,
+    "total_sold": 15,
+    "order_count": 15,
     "final_ranking_score": 0.5
   },
   {
@@ -37523,7 +37523,7 @@
     "title": "SKIN1004 Madagascar Centella Poremizing Fresh Ampoule - 30 ML",
     "sku": "8809576261875",
     "price": 15990.0,
-    "stock": 0,
+    "stock": 3,
     "product_type": "Serum",
     "vendor": "Skin1004",
     "tags": [
@@ -37538,7 +37538,7 @@
     "tags_str": "Acné / Granos, Arrugas / Antiedad, Grasa, Poros Dilatados, Sebo, Sensible, Vegano",
     "handle": "skin1004-madagascar-centella-poremizing-fresh-ampoule-30-ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/230117_Fresh-Ampoule.jpg?v=1736824009",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -37610,9 +37610,9 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 10,
-    "order_count": 10,
-    "final_ranking_score": 0.0
+    "total_sold": 8,
+    "order_count": 8,
+    "final_ranking_score": 0.3
   },
   {
     "product_id": "8801673904352",
@@ -37952,7 +37952,7 @@
     "title": "SKIN1004 Mascarilla Madagascar Centella Poremizing Quick Clay Stick Mask",
     "sku": "8809913830085",
     "price": 23990.0,
-    "stock": 6,
+    "stock": 4,
     "product_type": "Mascarilla",
     "vendor": "Skin1004",
     "tags": [
@@ -37998,8 +37998,8 @@
     ],
     "popularity_score": 0.9,
     "sales_score": 0.9,
-    "total_sold": 83,
-    "order_count": 81,
+    "total_sold": 76,
+    "order_count": 75,
     "final_ranking_score": 0.9
   },
   {
@@ -38008,7 +38008,7 @@
     "title": "SKIN1004 Protector Solar Madagascar Centella Hyalu-Cica Water-Fit Sun Serum",
     "sku": "8809576261592",
     "price": 23990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Protector Solar",
     "vendor": "Skin1004",
     "tags": [
@@ -38189,10 +38189,10 @@
       "Skin1004",
       "Skincare"
     ],
-    "popularity_score": 0.5,
-    "sales_score": 0.5,
-    "total_sold": 12,
-    "order_count": 11,
+    "popularity_score": 0.3,
+    "sales_score": 0.3,
+    "total_sold": 10,
+    "order_count": 9,
     "final_ranking_score": 0.0
   },
   {
@@ -38420,8 +38420,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.1
   },
   {
@@ -38430,7 +38430,7 @@
     "title": "SKIN1004 Tone Brightening Cleansing Gel 125 gr",
     "sku": "8809576261189",
     "price": 17990.0,
-    "stock": 2,
+    "stock": 1,
     "product_type": "Limpiador en Espuma",
     "vendor": "Skin1004",
     "tags": [
@@ -38501,8 +38501,8 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 6,
-    "order_count": 6,
+    "total_sold": 7,
+    "order_count": 7,
     "final_ranking_score": 0.3
   },
   {
@@ -38738,8 +38738,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.0
   },
   {
@@ -38910,8 +38910,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 5,
-    "order_count": 5,
+    "total_sold": 4,
+    "order_count": 4,
     "final_ranking_score": 0.0
   },
   {
@@ -39010,7 +39010,7 @@
     "title": "Some By Mi -  Retinol Intense Advanced Triple Action Eye Cream 30ml",
     "sku": "",
     "price": 24990.0,
-    "stock": 1,
+    "stock": 2,
     "product_type": "Contorno de Ojos",
     "vendor": "Some By Mi",
     "tags": [
@@ -39091,8 +39091,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 5,
+    "order_count": 5,
     "final_ranking_score": 0.1
   },
   {
@@ -39279,7 +39279,7 @@
     "title": "SOME BY MI - AHA BHA PHA 30 Days Miracle Toner 150ml",
     "sku": "",
     "price": 24990.0,
-    "stock": 0,
+    "stock": 1,
     "product_type": "Tonico Exfoliante",
     "vendor": "Some By Mi",
     "tags": [
@@ -39294,7 +39294,7 @@
     "tags_str": "Acné / Granos, Arrugas / Antiedad, Grasa, Manchas / Pigmentación, Mixta, Poros Dilatados, Sensible",
     "handle": "some-by-mi-aha-bha-pha-30-days-miracle-toner-150ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/SOME_BY_MI_-_AHA_BHA_PHA_30_Days_Miracle_Toner_150ml.webp?v=1746645178",
-    "available": false,
+    "available": true,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -39375,7 +39375,7 @@
     "sales_score": 0.1,
     "total_sold": 1,
     "order_count": 1,
-    "final_ranking_score": 0.0
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8890471088352",
@@ -39383,7 +39383,7 @@
     "title": "Some By Mi - Retinol Intense Reactivating Mask",
     "sku": "",
     "price": 2990.0,
-    "stock": 2,
+    "stock": 0,
     "product_type": "Mascarilla",
     "vendor": "Some By Mi",
     "tags": [
@@ -39392,7 +39392,7 @@
     "tags_str": "Nuevo",
     "handle": "some-by-mi-retinol-intense-reactivating-mask",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/SOMEBYMI-Retinol-Intense-Reactivating-Mask-01_869x869_ae7a122d-88f3-454d-8e9e-d7809c2bde6d.webp?v=1748033590",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "429736657120",
@@ -39420,11 +39420,11 @@
       "Nuevos Productos",
       "Some By Mi"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
-    "final_ranking_score": 0.1
+    "popularity_score": 0.3,
+    "sales_score": 0.3,
+    "total_sold": 6,
+    "order_count": 5,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8879850029280",
@@ -39432,7 +39432,7 @@
     "title": "Some By Mi - Retinol Intense Reactivating Serum 30ml",
     "sku": "",
     "price": 34990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Serum",
     "vendor": "Some By Mi",
     "tags": [
@@ -39446,7 +39446,7 @@
     "tags_str": "Arrugas / Antiedad, Grasa, Manchas / Pigmentación, Mixta, Seca, Sensible",
     "handle": "some-by-mi-retinol-intense-reactivating-serum-30ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/SOMEBYMI-Retinol-Intense-Reactivating-Serum-01_800x800_6dea8e8f-5f6b-4ac6-9d2b-5e7313a54414.webp?v=1746645778",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -39511,9 +39511,9 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
-    "final_ranking_score": 0.1
+    "total_sold": 4,
+    "order_count": 4,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8934481133792",
@@ -39521,7 +39521,7 @@
     "title": "SomeByMi - Aha-Bha-Pha 30 Days Miracle Acne Foam 100ml",
     "sku": "",
     "price": 18990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Limpiador en Espuma",
     "vendor": "Some By Mi",
     "tags": [
@@ -39535,7 +39535,7 @@
     "tags_str": "Acné / Granos, Grasa, Mixta, Poros Dilatados, Sebo, Sensible",
     "handle": "somebymi-aha-bha-pha-30-days-miracle-acne-foam-100ml",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/SOMEBYMI_-Aha-Bha-Pha-30-Days-Miracle-Acne-Foam-100ml-1_869x869_9621713e-628b-495f-b625-3995a39a8abe.webp?v=1752076964",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108246240",
@@ -39598,10 +39598,10 @@
       "Sebo",
       "Some By Mi"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -39610,14 +39610,14 @@
     "title": "Somebymi - Aha-Bha-Pha 30 Days Miracle Starter Kit",
     "sku": "",
     "price": 28990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Set",
     "vendor": "Some By Mi",
     "tags": [],
     "tags_str": "",
     "handle": "somebymi-aha-bha-pha-30-days-miracle-starter-kit",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/SOMEBYMI_Aha-Bha-Pha30DaysMiracleStarterKit.webp?v=1752076237",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "449639284960",
@@ -39638,10 +39638,10 @@
       "Pack / Set de viaje",
       "Some By Mi"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -40083,8 +40083,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.1
   },
   {
@@ -40825,7 +40825,7 @@
     "title": "Tiam – Parches Hidrocoloide Antiacne",
     "sku": "",
     "price": 4990.0,
-    "stock": 5,
+    "stock": 3,
     "product_type": "Parches Cosmeticos / Hidroloides",
     "vendor": "Tiam",
     "tags": [
@@ -40872,8 +40872,8 @@
     ],
     "popularity_score": 0.5,
     "sales_score": 0.5,
-    "total_sold": 12,
-    "order_count": 11,
+    "total_sold": 14,
+    "order_count": 13,
     "final_ranking_score": 0.5
   },
   {
@@ -40947,7 +40947,7 @@
     "title": "TIAM – Snail & Azulene Sleeping Mask",
     "sku": "8809416471822",
     "price": 21990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Hidratante",
     "vendor": "Tiam",
     "tags": [
@@ -41001,11 +41001,11 @@
       "Rojeces",
       "Tiam"
     ],
-    "popularity_score": 0.1,
-    "sales_score": 0.1,
-    "total_sold": 5,
-    "order_count": 5,
-    "final_ranking_score": 0.1
+    "popularity_score": 0.3,
+    "sales_score": 0.3,
+    "total_sold": 6,
+    "order_count": 6,
+    "final_ranking_score": 0.3
   },
   {
     "product_id": "8255363514592",
@@ -41069,8 +41069,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 5,
-    "order_count": 5,
+    "total_sold": 4,
+    "order_count": 4,
     "final_ranking_score": 0.1
   },
   {
@@ -41079,7 +41079,7 @@
     "title": "Tiam – Vita B3 Mist Toner",
     "sku": "8809863720030",
     "price": 19990.0,
-    "stock": 3,
+    "stock": 2,
     "product_type": "Tonico",
     "vendor": "Tiam",
     "tags": [
@@ -44012,14 +44012,14 @@
     "title": "VT Cosmetics - Reti-A Reedle Shot® 100 2STEP Hydrogel Mask",
     "sku": "",
     "price": 6990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Mascarilla",
     "vendor": "VT Cosmetics",
     "tags": [],
     "tags_str": "",
     "handle": "vt-cosmetics-reti-a-reedle-shot®-100-2step-hydrogel-mask",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/VT-017-1_869x869_3c2720bb-077b-407f-9270-2561b79252ab.webp?v=1750294311",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "429736657120",
@@ -44040,10 +44040,10 @@
       "Mascarillas",
       "VT Cosmetics"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -44052,14 +44052,14 @@
     "title": "VT Cosmetics - Vita-Light Reedle Shot® 100 2Step Hydrogel Mask",
     "sku": "",
     "price": 6990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Mascarilla",
     "vendor": "VT Cosmetics",
     "tags": [],
     "tags_str": "",
     "handle": "vt-cosmetics-vita-light-reedle-shot®-100-2step-hydrogel-mask",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/VT-016-1_869x869_262326f4-ffc6-4076-a4f4-de2560eb6520.webp?v=1750304614",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "429736657120",
@@ -44080,10 +44080,10 @@
       "Mascarillas",
       "VT Cosmetics"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -45726,7 +45726,7 @@
     "title": "[Etude House] Sunprise Mild Airy Finish Sun Milk (SPF50+/ PA+++)",
     "sku": "",
     "price": 19990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Protector Solar",
     "vendor": "Etude House",
     "tags": [
@@ -45739,7 +45739,7 @@
     "tags_str": "Grasa, Mixta, Protección UV, Sebo, Vegano",
     "handle": "etude-house-sunprise-mild-airy-finish-sun-milk-spf50-pa",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/files/Etude-House-Sunprise-Mild-Airy-Finish-Sun-Milk.jpg?v=1707858421",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "429423395040",
@@ -45781,10 +45781,10 @@
       "Protector Solar",
       "Sebo"
     ],
-    "popularity_score": 0.0,
-    "sales_score": 0.0,
-    "total_sold": 0,
-    "order_count": 0,
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -46673,8 +46673,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 3,
-    "order_count": 3,
+    "total_sold": 2,
+    "order_count": 2,
     "final_ranking_score": 0.1
   },
   {
@@ -47005,8 +47005,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 2,
-    "order_count": 2,
+    "total_sold": 1,
+    "order_count": 1,
     "final_ranking_score": 0.0
   },
   {
@@ -48263,7 +48263,7 @@
     "title": "[SNP] Peptaronic Cream",
     "sku": "8809550647893",
     "price": 17990.0,
-    "stock": 1,
+    "stock": 0,
     "product_type": "Hidratante",
     "vendor": "SNP",
     "tags": [
@@ -48275,7 +48275,7 @@
     "tags_str": "Arrugas / Antiedad, Seca, Sensible, Vegano",
     "handle": "snp-peptaronic-cream",
     "image_url": "https://cdn.shopify.com/s/files/1/0687/6132/1696/products/peptaronic-cream.jpg?v=1707709521",
-    "available": true,
+    "available": false,
     "collections": [
       {
         "collection_id": "430108180704",
@@ -48312,9 +48312,9 @@
     ],
     "popularity_score": 0.3,
     "sales_score": 0.3,
-    "total_sold": 7,
-    "order_count": 7,
-    "final_ranking_score": 0.3
+    "total_sold": 8,
+    "order_count": 8,
+    "final_ranking_score": 0.0
   },
   {
     "product_id": "8256962724064",
@@ -48592,11 +48592,11 @@
       "Sebo",
       "SNP"
     ],
-    "popularity_score": 0.3,
-    "sales_score": 0.3,
-    "total_sold": 6,
-    "order_count": 5,
-    "final_ranking_score": 0.3
+    "popularity_score": 0.1,
+    "sales_score": 0.1,
+    "total_sold": 5,
+    "order_count": 4,
+    "final_ranking_score": 0.1
   },
   {
     "product_id": "8249470746848",
@@ -48818,8 +48818,8 @@
     ],
     "popularity_score": 0.1,
     "sales_score": 0.1,
-    "total_sold": 4,
-    "order_count": 4,
+    "total_sold": 3,
+    "order_count": 3,
     "final_ranking_score": 0.1
   },
   {
